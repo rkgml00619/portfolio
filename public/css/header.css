@@ -1,0 +1,62 @@
+@import url("https://webfontworld.github.io/kopus/KoPubWorldDotum.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+img, video {
+  vertical-align: top;
+}
+
+input, button {
+  outline: none;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+}
+#header .center {
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .center .logo {
+  width: 150px;
+  margin: 25px 0;
+}
+#header .center .logo img {
+  width: 100%;
+}
+#header .center .menuWrap {
+  position: relative;
+}
+#header .center .menuWrap .gnbBg {
+  width: 100%;
+}
+#header .center .menuWrap .gnb {
+  display: flex;
+}
+#header .center .menuWrap .gnb li {
+  margin: 0 20px;
+}

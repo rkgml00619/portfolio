@@ -1,0 +1,101 @@
+#smart_inquiry_detail {
+    .contsDetail {
+        > div {
+            border-bottom: 1px solid #ccc;
+            &:last-child {
+                border-bottom: 0;
+            }
+            .detailTitle {
+                margin-bottom: 20px;
+            }
+            .detailSubText {
+                font-size: 2.2rem;
+                margin-bottom: 80px;
+                line-height: 1.4;
+                word-break: keep-all;
+            }
+        }
+        .content1 {
+            .boardConts {
+                border-top: 2px solid #4A5677;
+                border-bottom: 2px solid #4A5677;
+                margin-bottom: 40px;
+                .contsTop {
+                    > div {
+                        border-bottom: 1px solid #ccc;
+                    }
+                    .titleWrap {                        
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 30px;
+                        .title {
+                            font-size: 3rem;
+                            font-weight: 500;
+                        }
+                        .uploadDate {
+                            font-size: 1.8rem;
+                            font-weight: 300;
+                        }
+                    }
+                    .metaWrap {
+                        display: flex;
+                        padding: 20px 0;
+                        dl {
+                            display: flex;
+                            padding: 0 30px;
+                            border-right: 1px solid #ccc;
+                            &:last-child {
+                                border-right: 0;
+                            }
+                            dt, dd {
+                                font-size: 1.6rem;
+                                font-weight: 300;
+                            }
+                            dt {
+                                font-weight: 500;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+                .contsBot {
+                    padding: 60px 30px;
+                    p {
+                        font-size: 1.8rem;
+                        line-height: 1.8;
+                        font-weight: 300;
+                        padding-top: 20px;
+                        &:first-child {
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+
+            .boardBtns {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin-bottom: 20px;
+                a {
+                    display: inline-block;
+                    font-size: 1.6rem;
+                    border: 1px solid #4A5677;
+                    padding: 15px 40px;
+                    color: #4A5677;
+                    margin-left: 10px;
+                    transition: all 0.5s;
+                    &:hover {
+                        background: #4A5677;
+                        color: #fff;
+                    }
+                }
+                .editBtns {
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,426 @@
+@media screen and (max-width:768px) {
+    // 섹션 1번
+    #container {
+        .section1 {
+            height: 90vh;
+            .controls {
+                display: none;
+            }
+            .controlsM {
+                display: block;
+                position: absolute;
+                bottom: 40px; left: 0;
+                width: 100%;
+                z-index: 20;
+                .controlsWrap {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .arrowWrap {
+                        width: 30px; height: 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid #fff;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        transition: all 0.5s;
+                        &:hover {                            
+                            border: 1px solid $orange;
+                            background: $orange;
+                        }
+                        span.arrow {
+                            color: #fff;
+                            font-size: 20px;
+                            font-variation-settings: 'wght' 200;
+                        }
+                        .arrow.left { transform: translateX(4px);}
+                        .arrow.right { transform: translateX(2px);}                        
+                    } 
+                    > .title {
+                        width: 50%;
+                        text-align: center;
+                        color: #fff;
+                        font-size: 18px;
+                    }
+                }
+            }
+            .titleWrap {
+                top: 0%;
+                .titleBox {
+                    .center {
+                        width: 90%;
+                        .subtitle {
+                            font-size: 20px;
+                            margin-bottom: 20px;
+                        }        
+                        .maintitle {
+                            width: 100%;
+                            font-size: 3.8rem;
+                            margin: 20px 0 40px;
+                        }
+                        .context {
+                            width: 100%;
+                            font-size: 1.8rem;
+                            padding-right: 10%;
+                            margin-bottom: 60px;
+                        }
+                        .linkBtn {
+                            font-size: 16px;
+                            padding: 12px 20px;
+                            &:hover {
+                                .moreBtnWrap {
+                                    .text {
+                                        margin-right: 0px;
+                                    }
+                                }
+                            }
+                            .moreBtnWrap {
+                                .text {
+                                }
+                                .moreArrow {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            .bgWrap {
+                .bgSlide {
+                    .bgConts {
+                        img {
+                            width: auto;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 섹션 2번
+    #container {
+        .section2 {
+            height: auto;
+            padding: 20% 0;
+
+            .center {
+                width: 90%;
+                display: block;
+
+                .leftConts {
+                    width: 100%;
+                    position: relative;
+                    top: 0px; left: 0;
+                    height: auto;
+                
+                    .titleWrap {
+                        margin-bottom: 40px;
+                        .subtitle {
+                            font-size: 16px;
+                        }
+        
+                        .maintitle {
+                            font-size: 3.8rem;
+                            margin: 20px 0 40px;
+                        }
+                        .context {
+                            font-size: 16px;
+                            padding-right: 40px;
+                        }
+                    }
+                    .moreBtn {
+                        margin-bottom: 0;
+                        font-size: 16px;
+                        padding: 12px 24px;
+                    }
+                }
+
+                .rightConts {
+                    margin-top: 60px;
+                    .contsWrap {
+                        .conts {
+                            width: 100%; height: 350px;
+                            border-radius: 0 50px 0 50px;
+                            &:hover {
+                                border-radius: 0 50px 0 50px;
+                            }
+                            .textWrap {
+                                position: absolute;
+                                bottom: 0; left: 0;
+                                background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.6));
+                                box-sizing: border-box;
+                                padding: 40px 30px;
+                                transition: all 0.5s;
+                                h5 {
+                                    font-size: 2.4rem;
+                                    opacity: 1;
+                                }
+                                p {
+                                    font-size: 16px;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                        .conts:nth-child(odd){
+                            transform: translateY(0);
+                            &:hover {
+                                transform: translateY(0);
+                            }
+                        }
+                        .conts:nth-child(even){
+                            transform: translateY(0);
+                            &:hover {
+                                transform: translateY(0);
+                            }
+                        }
+                        .conts.on:nth-child(odd){
+                            transform: translateY(0);
+                        }
+                        .conts.on:nth-child(even){
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 섹션 3번
+    #container {
+        .section3 {
+            height: auto;
+            padding: 20% 0;
+            .center {
+                width: 90%;
+                display: block;
+                .leftConts {
+                    width: 100%;
+                
+                    .titleWrap {
+                        margin-bottom: 30px;
+                        
+                        .subtitle {
+                            padding: 10px 30px;
+                            font-size: 16px;
+                        }
+        
+                        .maintitle {
+                            font-size: 3.8rem;
+                            margin: 20px 0 20px; 
+                        }
+                        .context {
+                            font-size: 18px;
+                            line-height: 1.4;
+                            word-break: keep-all;
+                            color: #fff;
+                        }
+                    }
+                    .linkBtn {
+                        display: inline-block;
+                        margin-right: 8px;
+                        font-size: 16px;
+                        padding: 10px;
+                    }
+                }
+
+                .rightConts {
+                    width: 100%; height: auto;
+                    display: block;
+                    margin-top: 40px;
+                    border-radius: 30px 0 30px 0;
+                    .rLeft {
+                        width: 100%;
+                        padding: 40px 30px 80px;
+                        border-right: 0;
+                        h5 {
+                            color: #fff;
+                            line-height: 1.4;
+                            font-size: 2.6rem;
+                            span {
+                            }
+                        }
+                        p {
+                            font-size: 16px;
+                            line-height: 1.4;
+                        }
+                        
+                        span.plusIcon {
+                            font-size: 50px;
+                            right: 10px; bottom: 20px;
+                            color: #fff;
+                        }
+                        
+                    }
+                    .rRight {
+                        width: 100%;
+                        .quickMenu {
+                            width: 100%; height: 100%;
+                            > li {          
+                                padding: 20px 30px;
+                                border-bottom: 0;
+                                border-top: 1px solid #fff;
+                                a {
+                                    width: 100%;
+                                    color: #fff;
+                                    display: block;
+                                    position: relative;
+                                    .iconBox {
+                                        position: absolute;
+                                        right: -10px; top: -10px;
+                                        width: 100%;
+                                        span.quickIcon {
+                                            font-size: 40px;
+                                            font-variation-settings:'wght' 100;
+                                        }
+                                    }
+                                    .quickText {
+                                        width: 100%;
+                                        h5 {
+                                            font-size: 2.4rem;
+                                            line-height: 1.4;
+                                            font-weight: 400;
+                                            margin-bottom: 10px;
+                                        }
+                                        p {
+                                        }
+                                    }
+                                }                            
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 섹션 4번
+    #container {
+        .section4 {
+            height: auto;
+            padding: 20% 0;
+            .center {
+                width: 90%;
+                display: block;
+                .titleWrap {
+                    width: 100%;
+                    margin-bottom: 40px;
+                    
+                    .subtitle {
+                        font-size: 20px;
+                        margin-bottom: 30px;
+                    }
+                    .maintitle {
+                        font-size: 3.8rem;
+                        margin-bottom: 40px;
+                    }
+
+                    .linkBtn {
+                        padding: 12px 20px;
+                        &:hover {
+                            .moreBtnWrap {
+                                .text {
+                                    margin-right: 40px;
+                                }
+                            }
+                        }
+                        .moreBtnWrap {
+                            .text {
+                                font-size: 16px;
+                                margin-right: 20px;
+                            }
+                            span.linkArrow {
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                }
+
+                .contents {
+                    width: 100%;
+                    .contsWrap {
+                        width: 100%;
+                        .contsBox {
+                            width: 100%; height: 300px;
+                            padding: 40px 30px 30px;
+                            margin-bottom: 20px;
+                            &:hover {
+                                span.plusIcon {
+                                    font-size: 60px;
+                                }
+                            }
+                            span.plusIcon {
+                                right: 20px; top: 20px;
+                                font-size: 50px;
+                            }
+                            .category {
+                                font-size: 18px;
+                            }
+                            .cont {
+                                margin: 30px 0;
+                                h3 {
+                                    font-size: 24px;
+                                    margin-bottom: 20px;
+                                }
+                                p {
+                                    font-size: 16px;
+                                }
+                            }
+                            .date {
+                                font-size: 16px;
+                                color: #999;
+                                font-weight: 300;
+                            }
+                        }
+                        .carousel {
+                            width: 100%; height: 300px;
+                            margin-bottom: 40px;
+                            img {
+                                height: 100%;
+                            }
+                        }
+                    }
+                    .contsWrap > div:not(:last-child) {
+                        box-shadow: -5px 10px 10px rgba(0,0,0,0.1);
+                        &:hover {                        
+                            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                        }
+                    }
+                    .contsWrap > div:nth-child(even){
+                        border-radius: 50px 0 50px 0;
+                    }
+                    .contsWrap > div:nth-child(odd):not(:last-child){
+                        transform: translateY(0);
+                        border-radius: 50px 0 50px 0;
+                    }
+                    .contsWrap > div:nth-child(3), .contsWrap > div:nth-child(4) {
+                        margin-bottom: 20px;
+                    }
+                    .carouselBtns {
+                        bottom: -30px; left: 0;
+                        transform: translateY(0);
+                        span.arrow {
+                            font-size: 30px;
+                        }
+                        .btnsCenter {
+                            margin: 0 20px;
+                            .carouselNum {
+                                font-size: 16px;    
+                                margin-right: 15px;
+                            }
+                            .playPause {
+                                > i {
+                                    width: 20px; height: 20px;
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

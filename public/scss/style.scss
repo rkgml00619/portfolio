@@ -1,0 +1,40 @@
+// 공통요소 구간
+@import "common";
+
+// 헤더 구간
+@import "header";
+
+@import "main";
+@import "main_t";
+@import "main_m";
+
+
+// 서브페이지 구간
+@import "subPage_common";
+
+@import "./introduction/ceoGreet";
+@import "./introduction/innovationVision";
+@import "./introduction/ethicNormOutline";
+@import "./introduction/directions";
+
+@import "./business/business01";
+@import "./business/business02";
+@import "./business/business03";
+@import "./business/business04";
+
+@import "./festival/festival";
+
+@import "./press/press";
+@import "./press/press_detail";
+@import "./press/press_edit";
+
+@import "./notice/notice";
+
+@import "./customer/smart_inquiry";
+@import "./customer/smart_inquiry_detail";
+
+@import "./customer/tourist_complaint";
+@import "./customer/tourist_complaint_detail";
+
+@import "./customer/customer_Info";
+@import "./customer/customer_Info_detail";

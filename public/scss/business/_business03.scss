@@ -1,0 +1,389 @@
+#business03 {
+    .contsDetail {
+        > div {
+            border-bottom: 1px solid #ccc;
+            &:last-child {
+                border-bottom: 0;
+            }
+            .detailTitle {
+                margin-bottom: 20px;
+            }
+            .detailSubText {
+                font-size: 2.2rem;
+                margin-bottom: 80px;
+                line-height: 1.4;
+                word-break: keep-all;
+            }
+        }
+        .content1 {
+            > .conts {
+                margin-bottom: 80px;
+                padding-bottom: 80px;
+                border-bottom: 1px solid #ccc;
+                &:last-child {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    border-bottom: 0;
+                }
+                h3 {
+                    font-size: 2.6rem;
+                    margin-bottom: 30px;
+                    color: #4A5677;
+                }
+            }
+            .conts.direction {
+                .directionWrap {
+                    display: flex;
+                    justify-content: space-between;
+                    .list {
+                        width: 32%;
+                        border-radius: 10px;
+                        border: 1px solid #ccc;
+                        overflow: hidden;
+                        &:nth-child(1) {
+                            // background: rgba(59, 143, 222, 0.1);
+                            .listText {
+                                strong {
+                                    color: #3B90DE;
+                                }
+                            }
+                        }
+                        &:nth-child(2) {
+                            // background: rgba(155, 140, 194, 0.1);
+                            .listText {
+                                strong {
+                                    color: #9B8CC2;
+                                }
+                            }
+                        }
+                        &:nth-child(3) {
+                            // background: rgba(250, 166, 26, 0.1);
+                            .listText {
+                                strong {
+                                    color: #faa61a;
+                                }
+                            }
+                        }
+                        .listImg {
+                            width: 100%; height: 250px;
+                            overflow: hidden;
+                            position: relative;
+                            img {
+                                position: absolute;
+                                top: 50%; left: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 100%;
+                            }
+                        }                        
+                        .listText {
+                            width: 100%;
+                            padding: 30px;
+                            line-height: 1.4;
+                            box-sizing: border-box;
+                            color: #000;
+                            h5 {
+                                font-size: 2rem;
+                                font-weight: 300;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+            .conts.task {
+                .taskWrap {
+                    display: flex;
+                    justify-content: space-between;
+                    .taskList {
+                        width: 32%;
+                        padding: 40px;
+                        box-sizing: border-box;
+                        &:nth-child(1) {
+                            background: rgba(59, 143, 222, 0.06);
+                        }
+                        &:nth-child(2) {
+                            background: rgba(155, 140, 194, 0.06);
+                        }
+                        &:nth-child(3) {
+                            background: rgba(250, 166, 26, 0.06);
+                        }
+                        > div {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 20px;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            p {
+                                font-size: 1.8rem;
+                                font-weight: 300;
+                                line-height: 1.4;
+                                word-break: keep-all;
+                            }
+                            span {
+                                &::before {
+                                    content: "";
+                                    display: inline-block;
+                                    width: 5px; height: 5px;
+                                    background: #000;
+                                    border-radius: 50%;
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .conts.push {
+                .pushWrap {   
+                    display: block;                 
+                    .list {
+                        background: transparent;
+                        border: 0;
+                        width: 100%;
+                        border-radius:0;
+                        padding: 0;
+                        border-radius: 10px;
+                        display: block;
+                        margin-bottom: 50px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                        .listText {
+                            h5 {
+                                color: #000;
+                                font-size: 2rem;
+                                margin-bottom: 20px;
+                            }
+                        }
+                        > p {
+                            font-size: 1.6rem;
+                            line-height: 1.4;
+                            font-weight: 300;
+                            display: flex;
+                            margin-bottom: 10px;
+                            &::before {
+                                content: "";
+                                display: inline-block;
+                                width: 6px; height: 6px;
+                                border-radius: 50%;
+                                margin-right: 10px;
+                                background: #666;
+                                margin-top: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    #business03 {
+        .contsDetail {
+            > div {
+                border-bottom: 1px solid #ccc;
+                &:last-child {
+                    border-bottom: 0;
+                }
+                .detailTitle {
+                    margin-bottom: 20px;
+                }
+                .detailSubText {
+                    font-size: 2.2rem;
+                    margin-bottom: 60px;
+                }
+            }
+            .content1 {
+                > .conts {
+                    margin-bottom: 60px;
+                    padding-bottom: 60px;
+                    h3 {
+                        font-size: 2.4rem;
+                        margin-bottom: 30px;
+                    }
+                }
+                .conts.direction {
+                    .directionWrap {
+                        display: flex;
+                        justify-content: space-between;
+                        .list {
+                            width: 32%;
+                            .listImg {
+                                height: 180px;
+                            }                        
+                            .listText {
+                                padding: 30px 0;
+                                h5 {
+                                    font-size: 2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .conts.task {
+                    .taskWrap {
+                        .taskList {
+                            width: 32%;
+                            padding: 30px;
+                            > div {
+                                display: flex;
+                                align-items: flex-start;
+                                margin-bottom: 20px;
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                                p {
+                                    font-size: 1.6rem;
+                                    font-weight: 300;
+                                }
+                                span {
+                                    &::before {
+                                        width: 5px; height: 5px;
+                                        margin-right: 10px;
+                                        margin-top: 8px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .conts.push {
+                    .pushWrap {                 
+                        .list {
+                            margin-bottom: 50px;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            .listText {
+                                h5 {
+                                    color: #000;
+                                    font-size: 1.8rem;
+                                    margin-bottom: 20px;
+                                }
+                            }
+                            > p {
+                                font-size: 1.6rem;
+                                display: flex;
+                                margin-bottom: 10px;
+                                &::before {
+                                    width: 6px; height: 6px;
+                                    margin-right: 10px;
+                                    margin-top: 8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #business03 {
+        .contsDetail {
+            > div {
+                border-bottom: 1px solid #ccc;
+                &:last-child {
+                    border-bottom: 0;
+                }
+                .detailTitle {
+                    margin-bottom: 20px;
+                }
+                .detailSubText {
+                    font-size: 1.8rem;
+                    margin-bottom: 40px;
+                }
+            }
+            .content1 {
+                > .conts {
+                    margin-bottom: 60px;
+                    padding-bottom: 60px;
+                    h3 {
+                        font-size: 2.4rem;
+                        margin-bottom: 20px;
+                    }
+                }
+                .conts.direction {
+                    .directionWrap {
+                        display: block;
+                        .list {
+                            width: 100%;
+                            margin-bottom: 20px;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            .listImg {
+                                height: 180px;
+                            }                        
+                            .listText {
+                                padding: 20px 0;
+                                h5 {
+                                    font-size: 2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .conts.task {
+                    .taskWrap {
+                        display: block;
+                        .taskList {
+                            width: 100%;
+                            padding: 30px;
+                            margin-bottom: 20px;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            > div {
+                                display: flex;
+                                align-items: flex-start;
+                                margin-bottom: 10px;
+                                p {
+                                    font-size: 1.8rem;
+                                    font-weight: 300;
+                                }
+                                span {
+                                    &::before {
+                                        width: 5px; height: 5px;
+                                        margin-right: 10px;
+                                        margin-top: 8px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .conts.push {
+                    .pushWrap {                 
+                        .list {
+                            margin-bottom: 40px;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            .listText {
+                                h5 {
+                                    color: #000;
+                                    font-size: 1.8rem;
+                                    margin-bottom: 20px;
+                                }
+                            }
+                            > p {
+                                font-size: 1.6rem;
+                                display: flex;
+                                margin-bottom: 10px;
+                                &::before {
+                                    width: 6px; height: 6px;
+                                    margin-right: 10px;
+                                    margin-top: 8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,238 @@
+@import url("https://webfontworld.github.io/kopus/KoPubWorldDotum.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+img, video {
+  vertical-align: top;
+}
+
+input, button {
+  outline: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+#container .section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+#container .section1 .titleWrap {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  transition: all 0.8s linear;
+  z-index: 10;
+}
+#container .section1 .titleWrap .subtitle {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#container .section1 .titleWrap .subtitle span {
+  display: inline-block;
+  color: #faa61a;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  transition: all 0.2s;
+}
+#container .section1 .titleWrap .title {
+  width: 50%;
+  font-size: 55px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -2px;
+  color: #000;
+  transition: all 0.8s linear;
+}
+#container .section1 .titleWrap .title::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #000;
+  margin: 80px 0;
+  transition: all 0.8s linear;
+}
+#container .section1 .titleWrap .title strong {
+  font-weight: 700;
+}
+#container .section1 .titleWrap p {
+  width: 40%;
+  line-height: 1.6;
+  font-size: 18px;
+  margin-top: 0;
+  word-break: keep-all;
+  color: #000;
+  transition: all 0.8s linear;
+}
+#container .section1 .mainMedia {
+  width: 1600px;
+  height: 45vh;
+  position: relative;
+  border-radius: 0 50px 0 50px;
+  top: 80px;
+  overflow: hidden;
+  transition: all 0.8s linear;
+}
+#container .section1 .mainMedia .mediaBg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  transition: all 0.8s linear;
+}
+#container .section1 .mainMedia .mainSlide {
+  display: flex;
+  width: 400%;
+  transition: all 1s;
+}
+#container .section1 .mainMedia .mainSlide .list {
+  width: 25%;
+}
+#container .section1 .mainMedia .mainSlide .list img {
+  width: 100vw;
+  height: 100vh;
+}
+#container .section1 .titleWrap.on {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+#container .section1 .titleWrap.on .subtitle {
+  margin-bottom: 20px;
+}
+#container .section1 .titleWrap.on .subtitle span {
+  background: #faa61a;
+  color: #fff;
+  font-size: 16px;
+  padding: 15px 30px;
+  border-radius: 0 10px 0 10px;
+  font-weight: 400;
+}
+#container .section1 .titleWrap.on .title {
+  color: #fff;
+}
+#container .section1 .titleWrap.on .title::after {
+  width: 100px;
+  background: #fff;
+}
+#container .section1 .titleWrap.on p {
+  color: #fff;
+  margin-top: 60px;
+}
+#container .section1 .mainMedia.on {
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  border-radius: 0;
+}
+#container .section1 .mainMedia.on .mediaBg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+}
+#container .section2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10vh 0;
+  position: relative;
+}
+#container .section2 .center {
+  width: 1600px;
+}
+#container .section2 .center .titleWrap {
+  margin-bottom: 80px;
+}
+#container .section2 .center .titleWrap .subtitle {
+  color: #faa61a;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+#container .section2 .center .titleWrap .title {
+  font-size: 45px;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  margin-bottom: 40px;
+  font-weight: 400;
+  word-break: keep-all;
+}
+#container .section2 .center .titleWrap p {
+  font-size: 18px;
+  line-height: 1.4;
+}
+#container .section2 .center .contents {
+  width: 100%;
+}
+#container .section2 .center .contents .contsLeft {
+  width: 20%;
+}
+#container .section2 .center .contents .contsLeft .contsTexts .contsList {
+  margin-bottom: 40px;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#container .section2 .center .contents .contsLeft .contsTexts .contsList h5 {
+  width: 200px;
+  color: #000;
+  font-size: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+#container .section2 .center .contents .contsLeft .contsTexts .contsList p {
+  color: #666;
+  font-size: 18px;
+  line-height: 1.4;
+  word-break: keep-all;
+  font-weight: 400;
+}
+#container .section2 .center .contents .contsLeft .contsTexts .contsList.on {
+  opacity: 1;
+  height: auto;
+}
+#container .section2 .center .contents .contsLeft .slideControls {
+  display: flex;
+  justify-content: space-between;
+}
+#container .section2 .center .contents .contsRight {
+  width: 60%;
+  height: 500px;
+  background: pink;
+  position: absolute;
+  bottom: 10vh;
+  right: 0;
+}

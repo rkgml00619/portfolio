@@ -1,0 +1,442 @@
+.introduction {
+    .topSection {        
+        background: url(../img/introduction_topBG.jpg) no-repeat center / cover;
+    }
+}
+.business {
+    .topSection {        
+        background: url(../img/business_topBG.jpg) no-repeat center / cover;
+    }
+}
+.press {
+    .topSection {        
+        background: url(../img/press_topBG.jpg) no-repeat center / cover;
+    }
+}
+.customer {
+    .topSection {        
+        background: url(../img/customer_topBG.jpg) no-repeat center / cover;
+    }
+}
+
+
+
+.topSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 240px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    margin-top: 90px;
+    .overlay {
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.3);
+        position: absolute;
+    }
+    .center {
+        width: $subCenterWid;
+        .topTitWrap {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            .topTit {
+                color: #fff;
+                font-size: 4.2rem;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+            .topSubTit {
+                color: #fff;
+                font-size: 1.8rem;
+                font-weight: 200;
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+}
+.contentsWrap {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0 100px;
+    .center {
+        width: $subCenterWid;
+        .location {
+            display: flex;
+            align-items: center;
+            li {
+                font-size: 1.8rem;
+                position: relative;
+                &:last-child {
+                    a {
+                        color: $orange;
+                    }
+                }
+                a {
+                    color: #666;
+                }
+                .subLocation{
+                    position: absolute;
+                    top: 0;
+                    height: 0;
+                    overflow: hidden;
+                }
+            }
+            .locaArrow {
+                margin: 0 10px;
+            }
+        }
+        .contTitleWrap {
+            margin: 60px 0 100px;
+            .contsTitle {
+                font-size: 5rem;
+                margin-bottom: 40px;
+            }
+            .contSubTitle {
+                font-size: 2.2rem;
+            }
+        }
+        .contsWrap {
+            width: 100%;
+            .contsMenu {
+                display: flex;
+                border-bottom: 1px solid #ccc;
+                li {
+                    margin-right: 40px;
+                    &:hover {
+                        a {
+                            color: $orange;
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                    }
+                    a {
+                        display: inline-block;
+                        font-size: 2.2rem;
+                        font-weight: 600;
+                        color: #000;
+                        padding: 20px 0;
+                        border-bottom: 4px solid transparent;
+                        transition: all 0.5s;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            display: block;
+                            width: 0; height: 4px;
+                            background: $orange;
+                            position: absolute;
+                            bottom: -5PX; left: 50%;
+                            transform: translateX(-50%);
+                            transition: all 0.5s;
+                        }
+                    }
+                }
+                li.active {
+                    a {
+                        color: $orange;
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .contsMenuM {
+                display: none;
+            }
+
+            .contsDetail {
+                width: 100%;
+                > div {
+                    padding-bottom: 40px;
+                    .detailTitle {
+                        width: 100%;
+                        font-size: 3.6rem;
+                        font-weight: 500;
+                        margin: 80px 0px 60px;
+                        line-height: 1.4;
+                    }
+                    // content1, content2 ...
+                    > div {
+                        > h3 {
+                            font-size: 2.4rem;
+                            font-weight: 400;
+                            line-height: 1.4;
+                            margin-bottom: 20px;
+                        }
+                        > p {
+                            font-size: 1.8rem;
+                            font-weight: 300;
+                            line-height: 1.8;
+                            margin-bottom: 20px;
+                            word-break: keep-all;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .topSection {
+        height: 200px;
+        margin-top: 80px;
+        .center {
+            width: 90%;
+            .topTitWrap {
+                width: 90%;
+                .topTit {
+                    font-size: 3.6rem;
+                    margin-bottom: 20px;
+                }
+                .topSubTit {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+    .contentsWrap {
+        padding: 60px 0 40px;
+        .center {
+            width: 90%;
+            .location {
+                li {
+                    font-size: 1.8rem;
+                    &:last-child {
+                        a {
+                            color: $orange;
+                        }
+                    }
+                    a {
+                        color: #666;
+                    }
+                    .subLocation{
+                    }
+                }
+                .locaArrow {
+                    margin: 0 20px;
+                }
+            }
+            .contTitleWrap {
+                margin: 60px 0 80px;
+                .contsTitle {
+                    font-size: 4.2rem;
+                    margin-bottom: 40px;
+                }
+                .contSubTitle {
+                    font-size: 2rem;
+                }
+            }
+            .contsWrap {
+                .contsMenu {
+                    li {
+                        margin-right: 40px;
+                        a {
+                            font-size: 2rem;
+                            padding: 20px 0;
+                        }
+                    }
+                    li.active {
+                        a {
+                        }
+                    }
+                }
+    
+                .contsDetail {
+                    width: 100%;
+                    > div {
+                        padding-bottom: 40px;
+                        .detailTitle {
+                            font-size: 3rem;
+                            margin: 60px 0;
+                        }
+                        // content1, content2 ...
+                        > div {
+                            h3 {
+                                font-size: 2.2rem;
+                            }
+                            p {
+                                font-size: 1.6rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {    
+    .topSection {
+        height: 160px;
+        .center {
+            width: 90%;
+            .topTitWrap {
+                text-align: center;
+                .topTit {
+                    font-size: 3.4rem;
+                    margin-bottom: 15px;
+                }
+                .topSubTit {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+    .contentsWrap {
+        padding: 40px 0 40px;
+        .center {
+            width: 90%;
+            .location {
+                li {
+                    font-size: 1.6rem;
+                    &:last-child {
+                        a {
+                            color: $orange;
+                        }
+                    }
+                    a {
+                        color: #666;
+                    }
+                    .subLocation{
+                    }
+                }
+                .locaArrow {
+                    margin: 0 10px;
+                }
+            }
+            .contTitleWrap {
+                margin: 40px 0 60px;
+                .contsTitle {
+                    font-size: 3.2rem;
+                    margin-bottom: 20px;
+                }
+                .contSubTitle {
+                    width: 100%;
+                    font-size: 1.8rem;
+                    line-height: 1.4;
+                    word-break: keep-all;
+                }
+            }
+            .contsWrap {
+                .contsMenu {
+                    display: none;
+                }
+                .contsMenuM {
+                    display: block;
+                    position: relative;
+                    > a {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%; height: 50px;
+                        padding-left: 20px;
+                        box-sizing: border-box;
+                        font-size: 1.6rem;
+                        color: #000;
+                        border: 1px solid #ccc;
+                        transition: all 0.6s;
+                        .arrowWrap {
+                            position: relative;
+                            width: 50px; height: 100%;
+                            span.arrow {
+                                position: absolute;
+                                top: 50%; left: 50%;
+                                transform: translate(-50%, -50%);
+                                color: #000;
+                                transition: all 0.6s;
+                            }
+                            span.down {
+                                opacity: 1;
+                            }
+                            span.up {
+                                opacity: 0;
+                            }
+                        }
+                    }
+                    > a.on {
+                        background: $orange;
+                        border: 1px solid $orange;
+                        color: #fff;
+                        .arrowWrap {
+                            span.arrow {
+                                color: #fff;
+                            }
+                            span.down {
+                                opacity: 0;
+                            }
+                            span.up {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .mobileMenu {
+                        width: 100%; height: 0;
+                        position: absolute;
+                        top: 50px; left: 0;
+                        background: #fff;
+                        box-sizing: border-box;
+                        overflow: hidden;
+                        transition: all 0.6s;
+                        li {
+                            a {
+                                color: #000;
+                                height: 50px;
+                                display: flex;
+                                align-items: center;
+                                padding: 0 20px;
+                                font-size: 1.6rem;
+                                transition: all 0.5s;
+                            }
+                        }
+                        li.active {
+                            a {
+                                color: $orange;
+                            }
+                        }
+                    }
+                    .mobileMenu.on {
+                        border: 1px solid #ccc;
+                        border-top: 0;
+                        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+                        li {
+                            &:last-child {
+                                a {
+                                    border-bottom: 0;
+                                }
+                            }
+                            a {
+                                border-bottom: 1px solid #ccc;
+                            }
+                        }
+                    }
+                }
+                .contsDetail {
+                    width: 100%;
+                    > div {
+                        padding-bottom: 40px;
+                        .detailTitle {
+                            font-size: 2.6rem;
+                            margin: 40px 0;
+                            font-weight: 500;
+                        }
+                        // content1, content2 ...
+                        > div {
+                            h3 {
+                                font-size: 2.2rem;
+                            }
+                            p {
+                                font-size: 1.6rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,325 @@
+#notice {
+    .contentsWrap {
+        .center {
+            .contTitleWrap {
+                margin-bottom: 80px;
+            }
+        }
+    } 
+    .contsDetail {
+        > div {
+            border-bottom: 1px solid #ccc;
+            &:last-child {
+                border-bottom: 0;
+            }
+            .detailTitle {
+                margin-bottom: 20px;
+            }
+            .detailSubText {
+                font-size: 2.2rem;
+                margin-bottom: 80px;
+                line-height: 1.4;
+                word-break: keep-all;
+            }
+        }
+        .content1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .boardWrap {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .boardTop {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    .boardNum {
+                        font-size: 2rem;
+                        font-weight: 400;
+                        margin-bottom: 0;
+                        span {
+                            color: $orange;
+                            font-weight: 600;
+                        }
+                    }
+                    .searchForm {
+                        display: flex;
+                        align-items: center;
+                        .festivalSearch {
+                            width: 350px;
+                            height: 50px;
+                            box-sizing: border-box;
+                            padding: 15px;
+                            border: 1px solid #ccc;
+                            margin-right: 5px;
+                            &::placeholder {
+                                font-size: 1.6rem;
+                                line-height: 1;
+                                color: #999;
+                            }
+                        }
+                        .searchBtn {
+                            width: 50px; height: 50px;
+                            box-sizing: border-box;
+                            border: 0;
+                            background: #4A5677;
+                            color: #fff;
+                        }
+                    }
+                }
+                .boardBot {
+                    width: 100%;
+                    border-top: 2px solid #4A5677;
+                    border-bottom: 2px solid #4A5677;
+                    margin-bottom: 40px;
+                    .list {
+                        width: 100%;
+                        font-size: 1.6rem;
+                        font-weight: 300;
+                        text-align: center;
+                        border-collapse : collapse;
+                        border-spacing : 0;
+                        tr {
+                            &:first-child {
+                                background: #f9f9f9;
+                            }
+                        }
+                        th, td {
+                            border: 0;
+                            padding: 22px;
+                            box-sizing: border-box;
+                            border-bottom: 1px solid #ccc;
+                        }
+                        th {
+                            padding: 20px;
+                        }
+                        th.title {
+                            text-align: center;
+                        }
+                        .title {
+                            text-align: left;
+                            a {
+                                width: 850px;
+                                color: #000;
+                                display: block;
+                                align-items: center;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                span.new {
+                                    display: inline-block;
+                                    font-size: 10px;
+                                    color: #fff;
+                                    background: $orange;
+                                    padding: 5px 10px;
+                                    border-radius: 3px;
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .boardBtns {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 20px;
+                    .newPost {
+                        font-size: 1.6rem;
+                        background: #ccc;
+                        padding: 15px 40px;
+                        color: #Ffff;
+                        border-radius: 5px;
+                        transition: all 0.5s;
+                        &:hover {
+                            background: #4A5677;
+                        }
+                    }
+                }
+            }
+
+            .pagenation {
+                display: flex;
+                align-items: center;
+                a {
+                    display: inline-block;
+                    width: 40px; height: 40px;
+                    border: 1px solid #ccc;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 4px;
+                    color: #999;
+                    transition: all 0.5s;
+                    &:hover {                        
+                        color: #4A5677;
+                        border-color: #4A5677;
+                    }
+                }
+                a.active {
+                    color: #fff;
+                    border-color: #4A5677;
+                    background: #4A5677;
+                }
+                .numberWrap {
+                    display: flex;
+                    a {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+
+            .pagenationM {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    #notice {
+        .contsDetail {
+            .content1 {
+                .boardWrap {
+                    .boardBot {
+                        .list {
+                            .title {
+                                width: 60%;
+                                a {
+                                    width: 700px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #notice {
+        .contsDetail {
+            .content1 {
+                .boardWrap {
+                    display: block;
+                    width: 100%;
+                    .boardTop {
+                        width: 100%;
+                        display: block;
+                        margin-bottom: 20px;
+                        .boardNum {
+                            font-size: 1.8rem;
+                            font-weight: 400;
+                            margin-bottom: 10px;
+                            span {
+                                color: $orange;
+                                font-weight: 600;
+                            }
+                        }
+                        .searchForm {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            .festivalSearch {
+                                width: 83%;
+                                height: 50px;
+                                padding: 10px;
+                                margin-right: 0;
+                                &::placeholder {
+                                    font-size: 1.6rem;
+                                }
+                            }
+                            .searchBtn {
+                                width: 15%; height: 50px;
+                            }
+                        }
+                    }
+                    .boardBot {
+                        .list {
+                            th, td {
+                                padding: 20px;
+                                box-sizing: border-box;
+                            }
+                            th {
+                                padding: 16px;
+                            }
+                            th.title {
+                                text-align: center;
+                            }
+                            .no, .writer, .date {
+                                display: none;
+                                width: 0;
+                                overflow: hidden;
+                            }
+                            .title {
+                                width: 100%;
+                                text-align: left;
+                                a {
+                                    display: inline-block;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    width: 80vw;
+                                    span.new {
+                                        display: inline-block;
+                                        font-size: 10px;
+                                        color: #fff;
+                                        background: $orange;
+                                        padding: 5px 10px;
+                                        border-radius: 3px;
+                                        margin-right: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+        
+                    .boardBtns {
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-end;
+                        margin-bottom: 40px;
+                        .newPost {
+                            font-size: 1.6rem;
+                            background: #ccc;
+                            padding: 15px 40px;
+                            color: #Ffff;
+                            transition: all 0.5s;
+                            &:hover {
+                                background: #4A5677;
+                            }
+                        }
+                    }
+                }
+    
+                .pagenation {
+                    display: none;
+                }
+                .pagenationM {
+                    display: flex;
+                    align-items: center;
+                    a {
+                        color: #000;
+                        span.pageArrow {
+                            font-size: 3rem;
+                            font-variation-settings: "wght" 300;
+                        }
+                    }
+                    a.number {
+                        font-size: 2rem;
+                        margin: 0 20px;
+                        span {
+                            color: #4A5677;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

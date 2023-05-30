@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>알림마당 - 보도자료 - 상세페이지</title>
+    <script src="/js/window.js" defer></script>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/subPage.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include("../header") %>
+
+    <div id="press_edit" class="press">
+        <div class="topSection">
+            <div class="overlay"></div>
+            <div class="center">
+                <div class="topTitWrap">
+                    <h2 class="topTit">보도자료</h2>
+                    <p class="topSubTit">Korea Tourism Organization Press Release</p>
+                </div>
+            </div>
+        </div>
+        <div class="contentsWrap">
+            <div class="center">
+                <ul class="location">
+                    <li><a href="#">Home</a></li>
+                    <li class="locaArrow"><span  class="material-symbols-outlined">
+                        navigate_next</span></li>
+                    <li>
+                        <a href="#">알림마당</a>
+                    </li>
+                    <li class="locaArrow"><span  class="material-symbols-outlined">
+                        navigate_next</span></li>
+                    <li>
+                        <a href="#">보도자료</a>
+                    </li>
+                </ul>
+                <div class="contTitleWrap">
+                    <h2 class="contsTitle">보도자료</h2>
+                    <p class="contSubTitle">한국관광공사와 관련된 보도자료들을 확인해보세요.</p>
+                </div>
+
+                <div class="contsWrap">
+                    <div class="contsDetail">
+                        <div class="content1">
+                            <div class="boardConts">
+                                <form action="">
+                                    <div class="formWrap">
+                                        <div class="department">
+                                            <label for="department">담당부서</label>
+                                            <select name="department" id="department">
+                                                <option value="">지역홍보팀</option>
+                                                <option value="">관리감독팀</option>
+                                                <option value="">마켓팅팀</option>
+                                            </select>
+                                        </div>
+                                        <div class="writer">
+                                            <label for="writer">작성자</label>
+                                            <input id="writer" type="text">
+                                        </div>
+                                        <div class="title">
+                                            <label for="title">제목</label>
+                                            <input id="title" type="text" placeholder="제목을 입력하세요">
+                                        </div>
+                                        <div class="textArea">
+                                            <label for="textArea">내용</label>
+                                            <textarea name="" id="textArea" cols="30" rows="10"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="boardBtns">
+                                        <div class="editBtns">
+                                            <a class="deletePost" href="#">삭제</a>
+                                            <a class="editPost" href="#">수정</a>
+                                        </div>
+                                        <a class="goList" href="/html/festival/festival.html">등록</a>
+                                    </div>
+                                </form>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

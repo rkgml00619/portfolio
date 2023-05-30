@@ -1,0 +1,138 @@
+#innovationVision .topSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+  border-bottom: 1px solid #ccc;
+  background: url(../img/ceoGreet_topBG.jpg) no-repeat center/cover;
+  position: relative;
+}
+#innovationVision .topSection .overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+}
+#innovationVision .topSection .center {
+  width: 80%;
+}
+#innovationVision .topSection .center .topTitWrap {
+  position: absolute;
+  z-index: 10;
+}
+#innovationVision .topSection .center .topTitWrap .topTit {
+  color: #fff;
+  font-size: 4.8rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+#innovationVision .topSection .center .topTitWrap .topSubTit {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+#innovationVision .contentsWrap {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0 100px;
+}
+#innovationVision .contentsWrap .center {
+  width: 80%;
+}
+#innovationVision .contentsWrap .center .location {
+  display: flex;
+  align-items: center;
+}
+#innovationVision .contentsWrap .center .location li {
+  font-size: 2rem;
+  position: relative;
+}
+#innovationVision .contentsWrap .center .location li:last-child a {
+  color: #faa61a;
+}
+#innovationVision .contentsWrap .center .location li a {
+  color: #666;
+}
+#innovationVision .contentsWrap .center .location li .subLocation {
+  position: absolute;
+  top: 0;
+  height: 0;
+  overflow: hidden;
+}
+#innovationVision .contentsWrap .center .location .locaArrow {
+  margin: 0 20px;
+}
+#innovationVision .contentsWrap .center .contTitleWrap {
+  margin: 60px 0 100px;
+}
+#innovationVision .contentsWrap .center .contTitleWrap .contsTitle {
+  font-size: 5rem;
+  margin-bottom: 40px;
+}
+#innovationVision .contentsWrap .center .contTitleWrap .contSubTitle {
+  font-size: 2.2rem;
+}
+#innovationVision .contentsWrap .center .contsWrap {
+  width: 100%;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsMenu {
+  display: flex;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsMenu li {
+  margin-right: 40px;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsMenu li a {
+  display: inline-block;
+  font-size: 2.4rem;
+  color: #000;
+  padding: 20px 0;
+  border-bottom: 4px solid transparent;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsMenu li.active a {
+  color: #faa61a;
+  border-bottom: 4px solid #faa61a;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsMenuM {
+  display: none;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsDetail {
+  width: 100%;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsDetail > div {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsDetail > div:last-child {
+  border-bottom: 0;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsDetail > div .detailTitle {
+  width: 100%;
+  font-size: 3.6rem;
+  margin: 80px 0;
+  font-weight: 400;
+  line-height: 1.4;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsDetail .content1 > div {
+  width: 48%;
+  border: 1px solid #ccc;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsDetail .content1 > div h3 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsDetail .content1 > div p {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  word-break: keep-all;
+}
+#innovationVision .contentsWrap .center .contsWrap .contsDetail .content1 .contsLeft {
+  background: #4A5677;
+  color: #fff;
+}

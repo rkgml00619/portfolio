@@ -1,0 +1,511 @@
+#business02 {
+    .contsDetail {
+        > div {
+            border-bottom: 1px solid #ccc;
+            &:last-child {
+                border-bottom: 0;
+            }
+            .detailTitle {
+                margin-bottom: 20px;
+            }
+            .detailSubText {
+                font-size: 2.2rem;
+                margin-bottom: 80px;
+                line-height: 1.4;
+                word-break: keep-all;
+            }
+        }
+        .content1 {
+            > .conts {
+                margin-bottom: 80px;
+                padding-bottom: 80px;
+                border-bottom: 1px solid #ccc;
+                &:last-child {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    border-bottom: 0;
+                }
+                h3 {
+                    font-size: 2.6rem;
+                    margin-bottom: 30px;
+                    color: #4A5677;
+                }
+            }
+            .conts.direction {
+                .directionWrap {
+                    display: flex;
+                    justify-content: space-between;
+                    .list {
+                        width: 32%;
+                        border-radius: 0 50px 0 50px;
+                        overflow: hidden;
+                        &:nth-child(1) {
+                            .listText {
+                                background: #3B90DE;
+                            }
+                        }
+                        &:nth-child(2) {
+                            .listText {
+                                background: #9B8CC2;
+                            }
+                        }
+                        &:nth-child(3) {
+                            .listText {
+                                background: #faa61a;
+                            }
+                        }
+                        .listImg {
+                            width: 100%; height: 200px;
+                            overflow: hidden;
+                            position: relative;
+                            img {
+                                position: absolute;
+                                top: 50%; left: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 100%;
+                            }
+                        }                        
+                        .listText {
+                            width: 100%;
+                            padding: 30px 0;
+                            box-sizing: border-box;
+                            background: rgba(0,0,0,0.5);
+                            color: #fff;
+                            h5 {
+                                text-align: center;
+                                font-size: 2rem;
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+            }
+            .conts.task {
+                .taskWrap {
+                    > div {
+                        margin-bottom: 20px;
+                    }
+                    .taskConts1 {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        border: 1px solid #4A5677;
+                        border-radius: 100px;
+                        .list {
+                            width: 33.333333%;
+                            text-align: center;
+                            font-size: 2rem;
+                            padding: 40px 0;
+                            border-right: 1px solid #ccc;
+                            &:nth-child(1) {
+                                color: #3B90DE;
+                            }
+                            &:nth-child(2) {
+                                color: #9B8CC2;
+                            }
+                            &:nth-child(3) {
+                                color: #faa61a;
+                                border-right: 0;
+                            }
+                        }
+                    }
+
+                    .taskConts2 {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        .taskBox {
+                            width: 31%;
+                            &:nth-child(1) {
+                                .boxTop {
+                                    background: #3B90DE;
+                                }
+                                .boxBot {
+                                    background: #F5F9FD;
+                                }
+                            }
+                            &:nth-child(2) {
+                                .boxTop {
+                                    background: #9B8CC2;
+                                }
+                                .boxBot {
+                                    background: #FAF9FC;
+                                }
+                            }
+                            &:nth-child(3) {
+                                border-right: 0;
+                                .boxTop {
+                                    background: #faa61a;
+                                }
+                                .boxBot {
+                                    background: #FFFAF3;
+                                }
+                            }
+                            .boxTop {
+                                text-align: center;
+                                padding: 40px 0;
+                                font-size: 1.8rem;
+                                border-radius: 50px;
+                                color: #fff;
+                                margin-bottom: 20px;
+                            }
+                            .boxBot {
+                                height: 305px;
+                                padding: 40px;
+                                box-sizing: border-box;
+                                border-radius: 20px;
+                                > div {
+                                    display: flex;
+                                    align-items: center;
+                                    margin-bottom: 20px;
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+                                    p {
+                                        font-size: 1.8rem;
+                                        font-weight: 300;
+                                    }
+                                    span {
+                                        &::before {
+                                            content: "";
+                                            display: inline-block;
+                                            width: 5px; height: 5px;
+                                            background: #000;
+                                            border-radius: 50%;
+                                            margin-right: 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .conts.push {
+                .pushWrap {   
+                    display: block;                 
+                    .list {
+                        background: transparent;
+                        border: 0;
+                        width: 100%;
+                        border-radius:0;
+                        padding: 0;
+                        border-radius: 10px;
+                        display: block;
+                        margin-bottom: 50px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                        .listText {
+                            h5 {
+                                color: #000;
+                                font-size: 2rem;
+                                margin-bottom: 20px;
+                            }
+                        }
+                        > p {
+                            font-size: 1.6rem;
+                            line-height: 1.4;
+                            font-weight: 300;
+                            display: flex;
+                            margin-bottom: 10px;
+                            &::before {
+                                content: "";
+                                display: inline-block;
+                                width: 6px; height: 6px;
+                                border-radius: 50%;
+                                margin-right: 10px;
+                                background: #666;
+                                margin-top: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    #business02 {
+        .contsDetail {
+            > div {
+                border-bottom: 1px solid #ccc;
+                &:last-child {
+                    border-bottom: 0;
+                }
+                .detailTitle {
+                    margin-bottom: 20px;
+                }
+                .detailSubText {
+                    font-size: 2.2rem;
+                    margin-bottom: 80px;
+                    line-height: 1.4;
+                    word-break: keep-all;
+                }
+            }
+            .content1 {
+                > .conts {
+                    margin-bottom: 60px;
+                    padding-bottom: 60px;
+                    h3 {
+                        font-size: 2.4rem;
+                        margin-bottom: 30px;
+                    }
+                }
+                .conts.direction {
+                    .directionWrap {
+                        display: flex;
+                        justify-content: space-between;
+                        .list {
+                            width: 32%;
+                            border-radius: 0 50px 0 50px;
+                            .listImg {
+                                height: 180px;
+                            }                        
+                            .listText {
+                                padding: 30px 0;
+                                h5 {
+                                    font-size: 2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .conts.task {
+                    .taskWrap {
+                        > div {
+                            margin-bottom: 20px;
+                        }
+                        .taskConts1 {
+                            display: flex;
+                            justify-content: space-between;
+                            .list {
+                                width: 33.333333%;
+                                font-size: 2rem;
+                                padding: 30px 0;
+                            }
+                        }
+    
+                        .taskConts2 {
+                            display: flex;
+                            justify-content: space-between;
+                            .taskBox {
+                                width: 31%;
+                                .boxTop {
+                                    padding: 30px 0;
+                                    font-size: 1.8rem;
+                                    margin-bottom: 20px;
+                                }
+                                .boxBot {
+                                    height: 310px;
+                                    padding: 40px;
+                                    > div {
+                                        display: flex;
+                                        align-items: center;
+                                        margin-bottom: 20px;
+                                        p {
+                                            font-size: 1.6rem;
+                                            font-weight: 300;
+                                        }
+                                        span {
+                                            &::before {
+                                                content: "";
+                                                display: inline-block;
+                                                width: 5px; height: 5px;
+                                                background: #000;
+                                                border-radius: 50%;
+                                                margin-right: 10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .conts.push {
+                    .pushWrap {                 
+                        .list {
+                            margin-bottom: 50px;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            .listText {
+                                h5 {
+                                    color: #000;
+                                    font-size: 1.8rem;
+                                    margin-bottom: 20px;
+                                }
+                            }
+                            > p {
+                                font-size: 1.6rem;
+                                display: flex;
+                                margin-bottom: 10px;
+                                &::before {
+                                    width: 6px; height: 6px;
+                                    margin-right: 10px;
+                                    margin-top: 8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #business02 {
+        .contsDetail {
+            > div {
+                border-bottom: 1px solid #ccc;
+                &:last-child {
+                    border-bottom: 0;
+                }
+                .detailTitle {
+                    margin-bottom: 20px;
+                }
+                .detailSubText {
+                    font-size: 1.8rem;
+                    margin-bottom: 40px;
+                }
+            }
+            .content1 {
+                > .conts {
+                    margin-bottom: 60px;
+                    padding-bottom: 60px;
+                    h3 {
+                        font-size: 2.4rem;
+                        margin-bottom: 20px;
+                    }
+                }
+                .conts.direction {
+                    .directionWrap {
+                        display: block;
+                        .list {
+                            width: 100%;
+                            border-radius: 0 50px 0 50px;
+                            margin-bottom: 20px;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            .listImg {
+                                height: 180px;
+                            }                        
+                            .listText {
+                                padding: 30px 0;
+                                h5 {
+                                    font-size: 2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .conts.task {
+                    .taskWrap {
+                        > div {
+                            margin-bottom: 20px;
+                        }
+                        .taskConts1 {
+                            display: block;
+                            border: 0;
+                            &::after {
+                                content: url(../../img/double-arrow-down.svg);
+                                display: block;
+                                width: 50px; height: 50px;
+                                margin: 0 auto;
+                                margin-top: 20px;
+                            }
+                            .list {
+                                width: 100%;
+                                font-size: 2rem;
+                                padding: 30px 0;
+                                margin-bottom: 10px;
+                                border-radius: 50px;
+                                &:nth-child(1) {
+                                    border: 1px solid #3B90DE;
+                                }
+                                &:nth-child(2) {
+                                    border: 1px solid #9B8CC2;
+                                }
+                                &:nth-child(3) {
+                                    border: 1px solid #faa61a;
+                                    margin-bottom: 0px;
+                                }
+                            }
+                        }
+    
+                        .taskConts2 {
+                            display: block;
+                            margin-bottom: 0;
+                            .taskBox {
+                                width: 100%;
+                                margin-bottom: 20px;
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                                .boxTop {
+                                    padding: 30px 0;
+                                    font-size: 1.8rem;
+                                    margin-bottom: 20px;
+                                }
+                                .boxBot {
+                                    height: auto;
+                                    padding: 40px;
+                                    > div {
+                                        display: flex;
+                                        align-items: center;
+                                        margin-bottom: 20px;
+                                        p {
+                                            font-size: 1.6rem;
+                                            font-weight: 300;
+                                        }
+                                        span {
+                                            &::before {
+                                                content: "";
+                                                display: inline-block;
+                                                width: 5px; height: 5px;
+                                                background: #000;
+                                                border-radius: 50%;
+                                                margin-right: 10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .conts.push {
+                    .pushWrap {                 
+                        .list {
+                            margin-bottom: 40px;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            .listText {
+                                h5 {
+                                    color: #000;
+                                    font-size: 1.8rem;
+                                    margin-bottom: 20px;
+                                }
+                            }
+                            > p {
+                                font-size: 1.6rem;
+                                display: flex;
+                                margin-bottom: 10px;
+                                &::before {
+                                    width: 6px; height: 6px;
+                                    margin-right: 10px;
+                                    margin-top: 8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

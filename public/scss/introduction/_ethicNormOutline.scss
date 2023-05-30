@@ -1,0 +1,256 @@
+#ethicNormOutline {
+    .contsDetail {
+        > div {
+            border-bottom: 1px solid #ccc;
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+        .content1 {
+            padding-bottom: 80px;
+            > .conts {
+                background: #F2F4F7;
+                padding: 60px 60px 0;
+                box-sizing: border-box;
+                > p {
+                    width: 80%;
+                    margin-bottom: 40px;
+                }
+                > .contWrap {
+                    ul {
+                        li {
+                            list-style: decimal;
+                            font-size: 1.8rem;
+                            font-weight: 300;
+                            line-height: 1.6;
+                            padding: 20px 40px;
+                            margin-bottom: 20px;
+                            background-color: #fff;
+                            display: flex;
+                            word-break: keep-all;
+                            &:last-child {
+                                margin-bottom: 0;
+                                border-bottom: 0;
+                            }
+                            span {
+                                margin-right: 20px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                    > p {
+                        text-align: center;
+                        padding: 60px 0;
+                        font-size: 2.2rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        .content2 {
+            > .conts {
+                display: flex;
+                justify-content: space-between;
+                > div {
+                    width: 48%;
+                    border: 1px solid #ddd;
+                    padding: 60px;
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: space-between;
+                    .contsBoxText {  
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between; 
+                        > .textWrap {                                                    
+                            h5 {
+                                font-size: 2.2rem;
+                                margin-bottom: 40px;
+                            }
+                            p {
+                                font-size: 1.6rem;
+                                color: #666;
+                                margin-bottom: 10px;
+                            }
+                        } 
+                        .download {
+                            background: #4A5677;
+                            color: #fff;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 1.6rem;
+                            width: 200px; height: 50px;
+                            span.downloadIcon {
+                                font-variation-settings: "wght" 200;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                    .contsBoxImg {
+                        display: flex;
+                        justify-content: flex-end;
+                        img {
+                            height: 240px;
+                            box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    #ethicNormOutline {
+        .contsDetail {
+            .content1 {
+                > .conts {
+                    padding: 60px 60px 0;
+                    > p {
+                        width: 80%;
+                        margin-bottom: 40px;
+                    }
+                    > .contWrap {
+                        ul {
+                            li {
+                                font-size: 1.8rem;
+                                padding: 20px 40px;
+                                margin-bottom: 20px;
+                                span {
+                                    margin-right: 20px;
+                                }
+                            }
+                        }
+                        > p {
+                            padding: 60px 0;
+                            font-size: 2.2rem;
+                        }
+                    }
+                }
+            }
+            .content2 {
+                > .conts {
+                    display: flex;
+                    justify-content: space-between;
+                    > div {
+                        width: 48%;
+                        padding: 40px;
+                        display: flex;
+                        justify-content: space-between;
+                        .contsBoxText {  
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between; 
+                            > .textWrap {                                                    
+                                h5 {
+                                    font-size: 2.2rem;
+                                    margin-bottom: 40px;
+                                }
+                                p {
+                                    font-size: 1.6rem;
+                                    margin-bottom: 10px;
+                                }
+                            } 
+                            .download {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 1.6rem;
+                                width: 150px; height: 50px;
+                                span.downloadIcon {
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+                        .contsBoxImg {
+                            display: flex;
+                            justify-content: flex-end;
+                            img {
+                                height: 200px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #ethicNormOutline {
+        .contsDetail {
+            .content1 {
+                padding-bottom: 60px;
+                > .conts {
+                    padding: 30px 30px 0;
+                    > p {
+                        width: 100%;
+                        margin-bottom: 40px;
+                    }
+                    > .contWrap {
+                        ul {
+                            li {
+                                font-size: 1.6rem;
+                                padding: 20px;
+                                margin-bottom: 20px;
+                                span {
+                                    margin-right: 20px;
+                                }
+                            }
+                        }
+                        > p {
+                            padding: 40px 0;
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+            .content2 {
+                > .conts {
+                    display: block;
+                    > div {
+                        width: 100%;
+                        padding: 30px;
+                        display: block;
+                        .contsBoxText {  
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;                           
+                            > .textWrap { 
+                                margin-bottom: 20px;
+                                text-align: center;                                           
+                                h5 {
+                                    font-size: 2.2rem;
+                                    margin-bottom: 20px;
+                                }
+                                p {
+                                    font-size: 1.6rem;
+                                    margin-bottom: 10px;
+                                }
+                            } 
+                            .download {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 1.6rem;
+                                width: 150px; height: 40px;
+                                margin-bottom: 20px; 
+                                span.downloadIcon {
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+                        .contsBoxImg {
+                            display: flex;
+                            justify-content: center;
+                            img {
+                                height: 200px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

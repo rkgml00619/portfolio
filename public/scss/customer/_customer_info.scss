@@ -1,0 +1,172 @@
+#customer_info {
+    .contsDetail {
+        > div {
+            border-bottom: 1px solid #ccc;
+            &:last-child {
+                border-bottom: 0;
+            }
+            .detailTitle {
+                margin-bottom: 20px;
+            }
+            .detailSubText {
+                font-size: 2.2rem;
+                margin-bottom: 80px;
+                line-height: 1.4;
+                word-break: keep-all;
+            }
+        }
+        .content1 {
+            .boardConts {
+                form {
+                    .formWrap {   
+                        border-top: 2px solid #4A5677;
+                        border-bottom: 2px solid #4A5677;
+                        padding: 10px 20px;
+                        margin-bottom: 40px;                     
+                        > div {
+                            display: flex;
+                            padding: 20px 0;
+                            border-bottom: 1px solid #ccc;
+                            &:last-child {
+                                border-bottom: 0;
+                            }
+                            label, p {
+                                width: 12%; height: 50px;
+                                font-size: 1.8rem;
+                                font-weight: 400;
+                                display: flex;
+                                align-items: center;
+                            }
+                            input, select, textarea {
+                                height: 50px;
+                                box-sizing: border-box;
+                                border: 1px solid #ccc;
+                                border-radius: 5px;
+                                padding: 10px;
+                                outline: none;
+                                &::placeholder {
+                                    font-size: 1.6rem;
+                                    font-weight: 300;
+                                }
+                            }
+                            #name, #email, #phone, #local, #company {
+                                width: 30%;
+                            }
+                            /* IE */
+                            select::-ms-expand { 
+                                display: none;
+                            }
+                            #local {
+                                -o-appearance: none;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+                                appearance: none;
+                                background: url(../../img/icon_arrow_down.svg) calc(100% - 10px) center no-repeat;
+                                background-size: 20px;
+                                font-size: 1.6rem;
+                                font-weight: 300;
+                                color: #000;
+                                option {
+                                    background: #fff;
+                                    border: 1px solid #ccc;
+                                }
+                            }
+                            input#title, #textArea, #adress {
+                                width: 90%;
+                            }
+                            #textArea {
+                                height: 400px;
+                            }
+                        }
+                        .category {
+                            display: flex;
+                            align-items: center;
+                            label {
+                                font-weight: 400;
+                            }
+                            input[type="checkbox"] {
+                                margin-right: 10px;
+                                width: 20px; height: 20px;
+                            }
+                            input#regist, input#modify {
+                                border: 1px solid #fff;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .boardBtns {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                a {
+                    display: inline-block;
+                    font-size: 1.6rem;
+                    border: 1px solid #4A5677;
+                    padding: 15px 40px;
+                    color: #4A5677;
+                    margin-left: 10px;
+                    transition: all 0.5s;
+                    &:hover {
+                        background: #4A5677;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #customer_info {
+        .contsDetail {
+            .content1 {
+                .boardConts {
+                    form {
+                        .formWrap {   
+                            padding: 10px 0;
+                            margin-bottom: 40px;                     
+                            > div {
+                                display: block;
+                                padding: 20px 0;
+                                label {
+                                    width: 100%; height: auto;
+                                    margin-bottom: 10px;
+                                    font-size: 1.8rem;
+                                }
+                                input, select, textarea {
+                                    height: 50px;
+                                    border-radius: 5px;
+                                    padding: 10px;
+                                }
+                                #name, #email, #phone, #local, #company {
+                                    width: 100%;
+                                }
+                                #local {
+                                    background-size: 20px;
+                                    font-size: 1.6rem;
+                                }
+                                input#title, #textArea {
+                                    width: 100%;
+                                }
+                                #textArea {
+                                    height: 250px;
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                .boardBtns {
+                    a {
+                        padding: 12px 30px;
+                        margin-left: 6px;
+                    }
+                }
+            }
+        }
+    }
+}

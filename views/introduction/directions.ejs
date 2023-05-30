@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>기관소개 - 오시는길</title>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/subPage.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">    
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	532c743675e37bbb34265824c31ace4c"></script>
+</head>
+<body>
+    <%- include("../header") %>
+
+    <div id="ceoGreet" class="introduction">
+        <div class="topSection">
+            <div class="overlay"></div>
+            <div class="center">
+                <div class="topTitWrap">
+                    <h2 class="topTit">기관소개</h2>
+                    <p class="topSubTit">Institution introduction</p>
+                </div>
+            </div>
+        </div>
+        <div class="contentsWrap">
+            <div class="center">
+                <ul class="location">
+                    <li><a href="#">Home</a></li>
+                    <li class="locaArrow"><span  class="material-symbols-outlined">
+                        navigate_next</span></li>
+                    <li>
+                        <a href="#">기관소개</a>
+                    </li>
+                    <li class="locaArrow"><span  class="material-symbols-outlined">
+                        navigate_next</span></li>
+                    <li>
+                        <a href="#">오시는길</a>
+                    </li>
+                </ul>
+                <div class="contTitleWrap">
+                    <h2 class="contsTitle">오시는길</h2>
+                    <!-- <p class="contSubTitle">한국관광공사 오</p> -->
+                </div>
+
+                <div class="contsWrap">
+                    <ul class="contsMenu">
+                        <li><a href="/html/introduction/ceoGreet.html">CEO 인사말</a></li>
+                        <li><a href="/html/introduction/innovationVision.html">설립목적 및 비전</a></li>
+                        <li><a href="/html/introduction/ethicNormOutline.html">윤리·인권 경영</a></li>
+                        <li class="active"><a href="/html/introduction/directions.html">오시는길</a></li>
+                    </ul>
+
+                    <div class="contsMenuM">
+                        <a href="#">
+                            <span>CEO 인사말</span>
+                            <div class="arrowWrap">
+                                <span class="material-symbols-outlined arrow down">keyboard_arrow_down</span>
+                                <span class="material-symbols-outlined arrow up">keyboard_arrow_up</span>
+                            </div>
+                        </a>
+                        <ul class="mobileMenu">
+                            <li><a href="/html/introduction/ceoGreet.html">CEO 인사말</a></li>
+                            <li><a href="/html/introduction/innovationVision.html">설립목적 및 비전</a></li>
+                            <li><a href="/html/introduction/ethicNormOutline.html">윤리·인권 경영</a></li>
+                            <li class="active"><a href="/html/introduction/directions.html">오시는길</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="contsDetail">
+                        <div class="content1">
+                            <h2 class="detailTitle">한국관광공사 서울센터</h2>
+                            <div class="conts">
+                                <!-- <div id="map" style="width: 100%; height: 500px;"></div> -->
+                                <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.430071088406!2d126.97942471531177!3d37.5684893797976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2ee981a5fd3%3A0xfa8fa2abc29d32bb!2z7ZWc6rWt6rSA6rSR6rO17IKsIOyEnOyauOyEvO2EsA!5e0!3m2!1sko!2skr!4v1684756638252!5m2!1sko!2skr" width="1000px" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // var > 예전 변수, 최근에는 let과 const를 많이 사용한다.
+        // let과 비슷하게 덮어쓰기가 가능함
+        // 같은 변수명을 사용해도 오류 메세지가 나오지 않는다.
+
+        // new > new Date();에서 사용하는 것과 같은 것.
+        // 사용자가 불특정 다수이기 때문에 해당 기능을 복제하여 적용시키는 역할을 함
+
+        var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+        var options = { //지도를 생성할 때 필요한 기본 옵션
+            center: new kakao.maps.LatLng(37.5684894, 126.9816134), //지도의 중심좌표.
+            level: 3 //지도의 레벨(확대, 축소 정도)
+        };
+
+        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+        // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+        var mapTypeControl = new kakao.maps.MapTypeControl();
+
+        // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+        // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+        map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+        
+        // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+        var zoomControl = new kakao.maps.ZoomControl();
+        map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+        // 마커가 표시될 위치입니다 
+        var markerPosition  = new kakao.maps.LatLng(37.5684894, 126.9816134); 
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+
+        // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+        // marker.setMap(null); 
+    </script>
+</body>
+</html>

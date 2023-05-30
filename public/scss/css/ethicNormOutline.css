@@ -1,0 +1,9 @@
+#ethicNormOutline .contsDetail > div {
+  border-bottom: 1px solid #ccc;
+}
+#ethicNormOutline .contsDetail > div:last-child {
+  border-bottom: 0;
+}
+#ethicNormOutline .contsDetail .content1 .contsTop {
+  background: #999;
+}
