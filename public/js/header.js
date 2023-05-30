@@ -12,6 +12,7 @@ const mobileMenuWrap = document.querySelector("#header .headerConts_m");
 const hamMenu = document.querySelector("#header .headerConts_m .hamMenu");
 const CloseBtns = document.querySelector("#header .headerConts_m .close");
 const mobileMenu = document.querySelectorAll("#header .headerConts_m .gnbM .menuFold");
+const mobileAllMenu = document.querySelectorAll("#header .headerConts_m .gnbM > li");
 let mobileSubMenuList;
 
 // 반응형 화면 사이즈 확인
@@ -59,6 +60,9 @@ CloseBtns.onclick = function(){
 for(let i = 0; i < mobileMenu.length; i++){
     mobileMenu[i].onclick = function(){        
         mobileSubMenuList = mobileMenu[i].querySelectorAll(".subGnb > li");
+        mobileAllMenu.forEach(function(item){
+            item.classList.add("off");
+        });
 
         // 클릭한 메뉴에 on이 있는지 확인
         if(mobileMenu[i].classList.contains("on")){
@@ -72,15 +76,18 @@ for(let i = 0; i < mobileMenu.length; i++){
                 aleadyOn[i].classList.remove("on");
                 aleadyOn[i].querySelector(".subGnb").style.height = "0";
             }
-        }
-        
-        mobileMenu[i].classList.add("on");
 
-        if(tablet.matches){
-            mobileMenu[i].querySelector(".subGnb").style.height = (mobileSubMenuList.length * 70) + "px";
-        }
-        else if(mobile.matches){            
-            mobileMenu[i].querySelector(".subGnb").style.height = (mobileSubMenuList.length * 57) + "px";
+            // 선택한 것 메뉴만 클래스 추가
+            mobileMenu[i].classList.add("on");
+
+            // 태블릿일 때 서브메뉴 높이값
+            if(tablet.matches && mobile.matches == false){
+                mobileMenu[i].querySelector(".subGnb").style.height = (mobileSubMenuList.length * 70) + "px";
+            }
+            // 모바일일 때 서브메뉴 높이값
+            else if(tablet.matches && mobile.matches){            
+                mobileMenu[i].querySelector(".subGnb").style.height = (mobileSubMenuList.length * 57) + "px";
+            }
         }
     }
 }
