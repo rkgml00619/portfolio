@@ -9,7 +9,7 @@ ul, ol, li { list-style: none;}
 a { text-decoration: none;}
 h1, h2, h3, h4, h5, h6 { font-size: 100%;}
 img, video { vertical-align: top;}
-input, button { outline: none;}
+input, button, textarea { outline: none; border: 0;}
 
 @media screen and (max-width:768px) {
     html { font-size: 9px;}

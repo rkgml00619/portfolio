@@ -53,4 +53,8 @@ app.get("/press", (req, res)=>{
 app.get("/smart_inquiry", (req, res)=>{
     res.render("customer/smart_inquiry.ejs");
 });
+// 회원가입
+app.get("/join", (req, res)=>{
+    res.render("join/join.ejs");
+});
 

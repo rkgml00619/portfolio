@@ -11,15 +11,14 @@ const loginViewClose = document.querySelector("#header .joinDetail .close");
 const mobileMenuWrap = document.querySelector("#header .headerConts_m");
 const hamMenu = document.querySelector("#header .headerConts_m .hamMenu");
 const CloseBtns = document.querySelector("#header .headerConts_m .close");
+
+const mobileLoginBtns = document.querySelector("#header .headerConts_m .login");
+const mobileLoginViews = document.querySelector("#header .headerConts_m .joinDetail");
+const mobileLoginClose = document.querySelector("#header .headerConts_m .joinDetail .close");
+
 const mobileMenu = document.querySelectorAll("#header .headerConts_m .gnbM .menuFold");
 const mobileAllMenu = document.querySelectorAll("#header .headerConts_m .gnbM > li");
 let mobileSubMenuList;
-
-// 반응형 화면 사이즈 확인
-const pc = matchMedia("screen and (min-width: 1201px)");
-const tablet = matchMedia("screen and (max-width: 1200px)");
-const mobile = matchMedia("screen and (max-width: 768px)");
-
 
 /******************************************************************************************************************************************/
 
@@ -33,7 +32,7 @@ headerWrap.onmouseenter = function(){
 headerWrap.onmouseleave = function(){
     headerWrap.classList.remove("show");
     if(scTop == 0) {
-        if(mainLink == "/index.html"){
+        if(mainLink == "/"){
             headerWrap.classList.add("on");
         }
         else{            
@@ -42,9 +41,8 @@ headerWrap.onmouseleave = function(){
     }
 }
 
-
-// 모바일 또는 태블릿일 경우 header에 on 클래스 삭제
-if(mobile.matches || tablet.matches){
+// 모바일 또는 태블릿일 경우 header에 on 클래스제거
+if(scTop == 0 && mobile.matches || tablet.matches){
     headerWrap.classList.remove("on");
 }
 
@@ -99,9 +97,19 @@ loginBtns.onclick = function(e){
     loginView.style.height = "100vh";
     loginView.style.opacity = "1";
 }
+mobileLoginBtns.onclick = function(e){
+    e.preventDefault();
+    mobileLoginViews.style.height = "100vh";
+    mobileLoginViews.style.opacity = "1";
+}
 
 loginViewClose.onclick = function(e){
     e.preventDefault();
     loginView.style.height = "0";
     loginView.style.opacity = "0";
+}
+mobileLoginClose.onclick = function(e){
+    e.preventDefault();
+    mobileLoginViews.style.height = "0";
+    mobileLoginViews.style.opacity = "0";
 }

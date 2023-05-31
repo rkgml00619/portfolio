@@ -3,6 +3,10 @@ const sections = document.querySelectorAll("#container > div");
 let sectionTop = [];
 let scTop = 0;
 const mainLink = window.location.pathname;
+// 반응형 화면 사이즈 확인
+const pc = matchMedia("screen and (min-width: 1201px)");
+const tablet = matchMedia("screen and (max-width: 1200px)");
+const mobile = matchMedia("screen and (max-width: 768px)");
 
 sections.forEach(function(section, idx){
     sectionTop[idx] = section.offsetTop;
@@ -13,14 +17,14 @@ window.onscroll = function(){
 
     // header 색상 제어
     if(scTop == 0){
-        if(mainLink == "/index.html"){
+        if(mainLink == "/" && !mobile || !tablet){
             headerWrap.classList.add("on");
         }
-        else{            
+        else{
             headerWrap.classList.remove("on");
         }
     }
-    else if(scTop > 0 || mobile || tablet){
+    else if(scTop > 0 && mobile || tablet){
         headerWrap.classList.remove("on");
     }
     else if(scTop <= 0 || !mobile || !tablet){
@@ -36,5 +40,19 @@ window.onscroll = function(){
         else{
             festivalList[i].classList.remove("on");
         }
+    }
+}
+
+window.onresize = function(){
+    // 모바일 또는 태블릿일 경우 header에 on 클래스 삭제
+    if(scTop == 0 && mobile.matches || tablet.matches){
+        headerWrap.classList.remove("on");
+    }
+}
+
+window.onload = function(){
+    // 모바일 또는 태블릿일 경우 header에 on 클래스 삭제
+    if(scTop == 0 && mobile.matches || tablet.matches){
+        headerWrap.classList.remove("on");
     }
 }

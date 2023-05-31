@@ -1,6 +1,7 @@
 // 슬라이드 전환될 대상
 const mainSlideText = document.querySelectorAll(".section1 .titleWrap .titleBox");
 const mainSlideImg = document.querySelector(".section1 .bgSlide");
+const mainSlideImgList = document.querySelectorAll(".section1 .bgSlide .bgConts");
 let slideNum = 0;
 
 // 하단 슬라이드 메뉴
@@ -30,7 +31,8 @@ let autoMainSlide = setInterval(function(){
         slideNum++;
     }
     mainSlideImg.style.marginLeft = (slideNum * -100) + "%"; 
-    mainContolsM_title.innerText = mainMobileText[slideNum]; 
+    mainContolsM_title.innerText = mainMobileText[slideNum];
+    
     slideMenuControl();
     slideTextControl();
 }, 3000);
@@ -87,6 +89,12 @@ function slideMenuControl(){
         slideMenu.classList.remove("on");
     })
     mainSlideContols[slideNum].classList.add("on");
+
+    // 메인슬라이드 BG 줌인 효과
+    mainSlideImgList.forEach(function(bg){
+        bg.classList.remove("on");
+    });    
+    mainSlideImgList[slideNum].classList.add("on");
 }
 
 // 해당하는 슬라이드 텍스트 노출
@@ -95,6 +103,12 @@ function slideTextControl(){
         slideText.classList.remove("on");
     });
     mainSlideText[slideNum].classList.add("on");
+
+    // 메인슬라이드 BG 줌인 효과
+    mainSlideImgList.forEach(function(bg){
+        bg.classList.remove("on");
+    })
+    mainSlideImgList[slideNum].classList.add("on");
 }
 
 

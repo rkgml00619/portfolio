@@ -4,10 +4,13 @@
 // 헤더 구간
 @import "header";
 
+// 푸터 구간
+@import "footer";
+
+// 메인
 @import "main";
 @import "main_t";
 @import "main_m";
-
 
 // 서브페이지 구간
 @import "subPage_common";
@@ -38,3 +41,6 @@
 
 @import "./customer/customer_Info";
 @import "./customer/customer_Info_detail";
+
+// 회원가입
+@import "./join/join";

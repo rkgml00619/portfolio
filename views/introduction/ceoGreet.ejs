@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>기관소개 - 인사말</title>
-    <script src="/js/header.js" defer></script>
-    <script src="/js/subPage.js" defer></script>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <%- include("../header") %>
+<%- include("../header", {jsFiles: ["subPage.js", "sub/ceoGreet.js"]}) %>
 
     <div id="ceoGreet" class="introduction">
         <div class="topSection">
@@ -26,47 +12,15 @@
         </div>
         <div class="contentsWrap">
             <div class="center">
-                <ul class="location">
-                    <li><a href="#">Home</a></li>
-                    <li class="locaArrow"><span  class="material-symbols-outlined">
-                        navigate_next</span></li>
-                    <li>
-                        <a href="#">기관소개</a>
-                    </li>
-                    <li class="locaArrow"><span  class="material-symbols-outlined">
-                        navigate_next</span></li>
-                    <li>
-                        <a href="#">CEO 인사말</a>
-                    </li>
-                </ul>
+                <%- include("../subPageLocation.ejs") %>
+                
                 <div class="contTitleWrap">
                     <h2 class="contsTitle">CEO 인사말</h2>
                     <p class="contSubTitle">관광으로 행복한 나라를 만드는 기업, 한국관광공사입니다.</p>
                 </div>
 
                 <div class="contsWrap">
-                    <ul class="contsMenu">
-                        <li class="active"><a href="/html/introduction/ceoGreet.html">CEO 인사말</a></li>
-                        <li><a href="/html/introduction/innovationVision.html">설립목적 및 비전</a></li>
-                        <li><a href="/html/introduction/ethicNormOutline.html">윤리·인권 경영</a></li>
-                        <li><a href="/html/introduction/directions.html">오시는길</a></li>
-                    </ul>
-
-                    <div class="contsMenuM">
-                        <a href="#">
-                            <span>CEO 인사말</span>
-                            <div class="arrowWrap">
-                                <span class="material-symbols-outlined arrow down">keyboard_arrow_down</span>
-                                <span class="material-symbols-outlined arrow up">keyboard_arrow_up</span>
-                            </div>
-                        </a>
-                        <ul class="mobileMenu">
-                            <li class="active"><a href="/html/introduction/ceoGreet.html">CEO 인사말</a></li>
-                            <li><a href="/html/introduction/innovationVision.html">설립목적 및 비전</a></li>
-                            <li><a href="/html/introduction/ethicNormOutline.html">윤리·인권 경영</a></li>
-                            <li><a href="/html/introduction/directions.html">오시는길</a></li>
-                        </ul>
-                    </div>
+                    <%- include("../subPageMenus.ejs") %>
 
                     <div class="contsDetail">
                         <div class="content1">
@@ -240,11 +194,12 @@
                                     <p class="period">2018-05-17 ~ 2022-05-26</p>
                                 </div>
                             </div>
+                            <button class="load_more">더보기</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+    </div>    
+
+<%- include("../footer") %>  

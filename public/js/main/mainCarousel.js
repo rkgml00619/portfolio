@@ -5,7 +5,7 @@ const carouselBtns = document.querySelector(".section4 .carouselBtns");
 const carouselBtnPause = document.querySelector(".section4 .carouselBtns .pause");
 const carouselBtnPlay = document.querySelector(".section4 .carouselBtns .play");
 
-const carouselBtnText = document.querySelector(".section4 .carouselBtns .carouselNum");
+const carouselBtnText = document.querySelector(".section4 .carouselBtns .carouselNum > span");
 
 const carouselWrap = document.querySelector(".section4 .carouselWrap");
 let carouselList = document.querySelectorAll(".section4 .carouselWrap .carouselConts");
@@ -37,10 +37,19 @@ carouselBtns.onmouseleave = function(){
 carouselBtnPause.onclick = function(){    
     carouselBtnPause.classList.add("hide");
     carouselBtnPlay.classList.remove("hide");
+
+    clearInterval(autoCarousel);
 }
 carouselBtnPlay.onclick = function(){
     carouselBtnPause.classList.remove("hide");
     carouselBtnPlay.classList.add("hide");
+
+    autoCarousel = setInterval(function(){  
+        carouselList = document.querySelectorAll(".section4 .carouselWrap .carouselConts");  
+        carouselWrap.style.marginLeft = "-200%";
+        changeCarousel_left();
+        carouselWrap.style.transition = "all 0.5s";
+    }, 2000);
 }
 
 
@@ -60,12 +69,24 @@ carouselBtnRight.onclick = function(){
     carouselWrap.style.transition = "all 0.5s";
 }
 
+
+
+/* 리팩토링 *************************************************************************/
+
 // 좌측 버튼 클릭 시 바로 적용될 대상들
 function changeCarousel_left(){
     setTimeout(function(){
         carouselWrap.append(carouselList[0]);
         carouselWrap.style.marginLeft = "-100%";
         carouselWrap.style.transition = "all 0s";
+        
+        if(current === carouselList.length - 1){
+            current = 0;
+        }
+        else{
+            current++;
+        }
+        carouselBtnText.innerText = "0" + (current + 1);
     }, 500);    
 }
 // 우측 버튼 클릭 시 바로 적용될 대상들
@@ -74,5 +95,13 @@ function changeCarousel_right(){
         carouselWrap.prepend(carouselList[carouselList.length-1]);
         carouselWrap.style.marginLeft = "-100%";
         carouselWrap.style.transition = "all 0s";
+        
+        if(current === carouselList.length - 1){
+            current = 0;
+        }
+        else{
+            current++;
+        }
+        carouselBtnText.innerText = "0" + (current + 1);
     }, 500);    
 }
