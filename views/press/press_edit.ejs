@@ -34,36 +34,51 @@
                     <div class="contsDetail">
                         <div class="content1">
                             <div class="boardConts">
-                                <form action="">
+                                <form action="/pressData" method="post" enctype="multipart/form-data">
                                     <div class="formWrap">
                                         <div class="department">
                                             <label for="department">담당부서</label>
                                             <select name="department" id="department">
-                                                <option value="">지역홍보팀</option>
-                                                <option value="">관리감독팀</option>
-                                                <option value="">마켓팅팀</option>
+                                                <option value="지역홍보팀">지역홍보팀</option>
+                                                <option value="관리감독팀">관리감독팀</option>
+                                                <option value="마케팅팀">마케팅팀</option>
                                             </select>
                                         </div>
                                         <div class="writer">
                                             <label for="writer">작성자</label>
-                                            <input id="writer" type="text">
+                                            <% if (login) { %>
+                                                <input id="writer" name="writer" type="text" value="<%-login.name%>">
+                                            <% } else { %>
+                                                <input id="writer" name="writer" type="text" value="관리자">
+                                            <% } %>
+                                        </div>
+                                        <div class="writeDate">
+                                            <label for="writeDate">작성일</label>
+                                            <input id="writeDate" name="writeDate" type="date">
+                                        </div>
+                                        <div class="thumbImg">
+                                            <label for="thumbImg">썸네일</label>
+                                            <input id="thumbImg" name="thumbImg" type="file">
+                                        </div>
+                                        <div class="detailImg">
+                                            <label for="detailImg">상세 이미지</label>
+                                            <input id="detailImg" name="detailImg" type="file" multiple>
                                         </div>
                                         <div class="title">
                                             <label for="title">제목</label>
-                                            <input id="title" type="text" placeholder="제목을 입력하세요">
+                                            <input id="title" name="title" type="text" placeholder="제목을 입력하세요">
                                         </div>
                                         <div class="textArea">
                                             <label for="textArea">내용</label>
-                                            <textarea name="" id="textArea" cols="30" rows="10"></textarea>
+                                            <textarea name="textArea" id="textArea"></textarea>
                                         </div>
                                     </div>
 
                                     <div class="boardBtns">
                                         <div class="editBtns">
-                                            <a class="deletePost" href="#">삭제</a>
-                                            <a class="editPost" href="#">수정</a>
+                                            <button class="cancelBtn" type="reset">취소</button>
+                                            <button class="submitBtn" type="submit">등록</button>
                                         </div>
-                                        <a class="goList" href="/html/festival/festival.html">등록</a>
                                     </div>
                                 </form>
                             </div>                            

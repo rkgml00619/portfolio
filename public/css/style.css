@@ -11,7 +11,7 @@ html {
   padding: 0;
 }
 
-body {
+body, input, select, button, textarea {
   line-height: 1;
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -131,7 +131,7 @@ input, button, textarea {
   color: #000;
   font-size: 2rem;
   font-weight: 500;
-  padding: 25px 0 10px;
+  padding: 15px 0;
   transition: all 0.5s;
 }
 #header .headerConts .center .menuWrap .gnb > li > a:hover {
@@ -175,6 +175,15 @@ input, button, textarea {
   align-items: center;
   transition: all 0.5s;
 }
+#header .headerConts .center .joinWrap {
+  display: flex;
+  align-items: center;
+}
+#header .headerConts .center .joinWrap .loginName {
+  font-size: 16px;
+  font-weight: 300;
+  color: #000;
+}
 #header .headerConts .center .joinWrap a {
   display: inline-block;
   font-size: 1.2rem;
@@ -183,10 +192,9 @@ input, button, textarea {
   background: #f9f9f9;
   border: 1px solid transparent;
   padding: 10px 22px;
-  margin-top: 10px;
-  margin-left: 6px;
   border-radius: 5px;
   text-transform: uppercase;
+  margin-left: 10px;
   transition: all 0.5s;
 }
 #header .headerConts .center .joinWrap a:hover {
@@ -281,6 +289,9 @@ input, button, textarea {
 #header.on .center .menuWrap .gnb > li > a {
   color: #fff;
 }
+#header.on .center .joinWrap .loginName {
+  color: #fff;
+}
 #header.on .center .joinWrap a {
   color: #fff;
   border: 1px solid #ccc;
@@ -300,6 +311,11 @@ input, button, textarea {
 #header.show .headerConts .center .joinWrap a {
   background: transparent;
   border: 1px solid #ccc;
+}
+#header.show .headerConts .center .joinWrap a:hover {
+  background: #4A5677;
+  border-color: #4A5677;
+  color: #fff;
 }
 
 @media screen and (max-width: 1200px) {
@@ -2221,6 +2237,10 @@ input, button, textarea {
 
 .business .topSection {
   background: url(../img/business_topBG.jpg) no-repeat center/cover;
+}
+
+.festival .topSection {
+  background: url(../img/fesitival_topBG.jpg) no-repeat center/cover;
 }
 
 .press .topSection {
@@ -5235,11 +5255,13 @@ input, button, textarea {
   word-break: keep-all;
 }
 #festival .contsDetail .content1 {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 #festival .contsDetail .content1 .boardWrap {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5297,11 +5319,12 @@ input, button, textarea {
   border-top: 1px solid #ccc;
 }
 #festival .contsDetail .content1 .boardWrap .boardBot .listWrap {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, calc(33.333333% - 40px));
+  grid-gap: 40px;
 }
 #festival .contsDetail .content1 .boardWrap .boardBot .listWrap .list {
-  width: calc((100% - 80px) / 3);
+  width: 100%;
   border: 1px solid #e0e0e0;
   box-sizing: border-box;
   border-radius: 15px;
@@ -5593,6 +5616,94 @@ input, button, textarea {
     color: #4A5677;
   }
 }
+#festival_edit .contsDetail > div {
+  border-bottom: 1px solid #ccc;
+}
+#festival_edit .contsDetail > div:last-child {
+  border-bottom: 0;
+}
+#festival_edit .contsDetail > div .detailTitle {
+  margin-bottom: 20px;
+}
+#festival_edit .contsDetail > div .detailSubText {
+  font-size: 2.2rem;
+  margin-bottom: 80px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+#festival_edit .contsDetail .content1 .boardConts form .formWrap {
+  border-top: 2px solid #4A5677;
+  border-bottom: 2px solid #4A5677;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+#festival_edit .contsDetail .content1 .boardConts form .formWrap > div {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+#festival_edit .contsDetail .content1 .boardConts form .formWrap > div label {
+  width: 10%;
+  height: 50px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  border-right: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+#festival_edit .contsDetail .content1 .boardConts form .formWrap > div input, #festival_edit .contsDetail .content1 .boardConts form .formWrap > div select, #festival_edit .contsDetail .content1 .boardConts form .formWrap > div textarea {
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+#festival_edit .contsDetail .content1 .boardConts form .formWrap > div input::-moz-placeholder, #festival_edit .contsDetail .content1 .boardConts form .formWrap > div select::-moz-placeholder, #festival_edit .contsDetail .content1 .boardConts form .formWrap > div textarea::-moz-placeholder {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+#festival_edit .contsDetail .content1 .boardConts form .formWrap > div input::placeholder, #festival_edit .contsDetail .content1 .boardConts form .formWrap > div select::placeholder, #festival_edit .contsDetail .content1 .boardConts form .formWrap > div textarea::placeholder {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+#festival_edit .contsDetail .content1 .boardConts form .formWrap > div select {
+  width: 200px;
+}
+#festival_edit .contsDetail .content1 .boardConts form .formWrap > div input#title, #festival_edit .contsDetail .content1 .boardConts form .formWrap > div #textArea {
+  width: 90%;
+}
+#festival_edit .contsDetail .content1 .boardConts form .formWrap > div input#writeDate {
+  width: 20%;
+}
+#festival_edit .contsDetail .content1 .boardConts form .formWrap > div #textArea {
+  height: 400px;
+}
+#festival_edit .contsDetail .content1 .boardBtns {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#festival_edit .contsDetail .content1 .boardBtns button {
+  display: inline-block;
+  background: #fff;
+  font-size: 1.6rem;
+  border: 1px solid #4A5677;
+  padding: 15px 40px;
+  color: #4A5677;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#festival_edit .contsDetail .content1 .boardBtns button:hover {
+  background: #4A5677;
+  color: #fff;
+}
+
 #press .contsDetail > div {
   border-bottom: 1px solid #ccc;
 }
@@ -5902,27 +6013,6 @@ input, button, textarea {
   #press .contsDetail .content1 .boardBtns .newPost:hover {
     background: #4A5677;
   }
-  #press .contsDetail .content1 .pagenation {
-    display: none;
-  }
-  #press .contsDetail .content1 .pagenationM {
-    display: flex;
-    align-items: center;
-  }
-  #press .contsDetail .content1 .pagenationM a {
-    color: #000;
-  }
-  #press .contsDetail .content1 .pagenationM a span.pageArrow {
-    font-size: 3rem;
-    font-variation-settings: "wght" 300;
-  }
-  #press .contsDetail .content1 .pagenationM a.number {
-    font-size: 2rem;
-    margin: 0 20px;
-  }
-  #press .contsDetail .content1 .pagenationM a.number span {
-    color: #4A5677;
-  }
 }
 #press_detail .contsDetail > div {
   border-bottom: 1px solid #ccc;
@@ -5955,6 +6045,8 @@ input, button, textarea {
 }
 #press_detail .contsDetail .content1 .boardConts .contsTop .titleWrap .title {
   font-size: 3rem;
+  letter-spacing: -0.5px;
+  word-break: keep-all;
   font-weight: 500;
 }
 #press_detail .contsDetail .content1 .boardConts .contsTop .titleWrap .uploadDate {
@@ -5988,6 +6080,7 @@ input, button, textarea {
   line-height: 1.8;
   font-weight: 300;
   padding-top: 20px;
+  white-space: pre-line;
 }
 #press_detail .contsDetail .content1 .boardBtns {
   width: 100%;
@@ -6062,8 +6155,14 @@ input, button, textarea {
   font-size: 1.6rem;
   font-weight: 300;
 }
+#press_edit .contsDetail .content1 .boardConts form .formWrap > div select {
+  width: 200px;
+}
 #press_edit .contsDetail .content1 .boardConts form .formWrap > div input#title, #press_edit .contsDetail .content1 .boardConts form .formWrap > div #textArea {
   width: 90%;
+}
+#press_edit .contsDetail .content1 .boardConts form .formWrap > div input#writeDate {
+  width: 20%;
 }
 #press_edit .contsDetail .content1 .boardConts form .formWrap > div #textArea {
   height: 400px;
@@ -6071,23 +6170,26 @@ input, button, textarea {
 #press_edit .contsDetail .content1 .boardBtns {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 20px;
 }
-#press_edit .contsDetail .content1 .boardBtns a {
+#press_edit .contsDetail .content1 .boardBtns button {
   display: inline-block;
+  background: #fff;
   font-size: 1.6rem;
   border: 1px solid #4A5677;
   padding: 15px 40px;
   color: #4A5677;
   margin-left: 10px;
+  cursor: pointer;
   transition: all 0.5s;
 }
-#press_edit .contsDetail .content1 .boardBtns a:hover {
+#press_edit .contsDetail .content1 .boardBtns button:hover {
   background: #4A5677;
   color: #fff;
 }
+
 #notice .contentsWrap .center .contTitleWrap {
   margin-bottom: 80px;
 }
@@ -7110,7 +7212,9 @@ input, button, textarea {
   margin-bottom: 40px;
 }
 #join .contsDetail .content1 form .formWrap > div {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 20px 0;
   border-bottom: 1px solid #ccc;
@@ -7118,8 +7222,13 @@ input, button, textarea {
 #join .contsDetail .content1 form .formWrap > div:last-child {
   border-bottom: 0;
 }
-#join .contsDetail .content1 form .formWrap > div > label {
-  width: 10%;
+#join .contsDetail .content1 form .formWrap > div > .inputWrap {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+#join .contsDetail .content1 form .formWrap > div > .inputWrap > label {
+  width: 120px;
   height: 50px;
   font-size: 1.8rem;
   font-weight: 400;
@@ -7127,12 +7236,13 @@ input, button, textarea {
   margin-bottom: 10px;
   margin-right: 40px;
   padding-right: 20px;
+  word-break: keep-all;
   border-right: 1px solid #ccc;
   display: flex;
   align-items: center;
 }
-#join .contsDetail .content1 form .formWrap > div input, #join .contsDetail .content1 form .formWrap > div select {
-  width: 40%;
+#join .contsDetail .content1 form .formWrap > div > .inputWrap input, #join .contsDetail .content1 form .formWrap > div > .inputWrap select {
+  width: calc(100% - 120px);
   height: 50px;
   box-sizing: border-box;
   border: 1px solid #ccc;
@@ -7141,19 +7251,54 @@ input, button, textarea {
   font-size: 1.6rem;
   font-weight: 300;
 }
-#join .contsDetail .content1 form .formWrap > div input::-moz-placeholder, #join .contsDetail .content1 form .formWrap > div select::-moz-placeholder {
+#join .contsDetail .content1 form .formWrap > div > .inputWrap input::-moz-placeholder, #join .contsDetail .content1 form .formWrap > div > .inputWrap select::-moz-placeholder {
   font-size: 1.6rem;
   font-weight: 300;
 }
-#join .contsDetail .content1 form .formWrap > div input::placeholder, #join .contsDetail .content1 form .formWrap > div select::placeholder {
+#join .contsDetail .content1 form .formWrap > div > .inputWrap input::placeholder, #join .contsDetail .content1 form .formWrap > div > .inputWrap select::placeholder {
   font-size: 1.6rem;
   font-weight: 300;
+}
+#join .contsDetail .content1 form .formWrap > div > .inputWrap input.err {
+  border-color: red;
+}
+#join .contsDetail .content1 form .formWrap > div > .inputWrap input.ok {
+  border-color: green;
+}
+#join .contsDetail .content1 form .formWrap > div span.message {
+  display: inline-block;
+  width: 40%;
+  margin-left: 20px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #999;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+#join .contsDetail .content1 form .formWrap > div span.message.err {
+  color: red;
+}
+#join .contsDetail .content1 form .formWrap > div span.message.ok {
+  color: green;
+}
+#join .contsDetail .content1 form .formWrap > div label.agreement {
+  width: 120px;
+  height: 50px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  margin-right: 40px;
+  padding-right: 10px;
+  border-right: 1px solid #ccc;
+  display: flex;
+  align-items: center;
 }
 #join .contsDetail .content1 form .formWrap > div .agreementWrap {
-  width: 80%;
+  width: calc(100% - 120px);
 }
 #join .contsDetail .content1 form .formWrap > div .agreementWrap .agreementConts {
-  width: 100%;
+  max-width: 100%;
   height: 300px;
   overflow: hidden;
   overflow-y: auto;
@@ -7209,26 +7354,46 @@ input, button, textarea {
 #join .contsDetail .content1 .boardBtns {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 20px;
 }
-#join .contsDetail .content1 .boardBtns a {
+#join .contsDetail .content1 .boardBtns button {
   display: inline-block;
   font-size: 1.6rem;
+  background: #fff;
   border: 1px solid #4A5677;
   padding: 15px 40px;
   color: #4A5677;
   margin-left: 10px;
+  cursor: pointer;
   transition: all 0.5s;
 }
-#join .contsDetail .content1 .boardBtns a:hover {
+#join .contsDetail .content1 .boardBtns button:hover {
   background: #4A5677;
   color: #fff;
 }
+
 @media screen and (max-width: 1200px) {
-  #join .contsDetail .content1 form .formWrap > div > label {
+  #join .contsDetail .content1 form .formWrap > div {
+    flex-wrap: wrap;
+  }
+  #join .contsDetail .content1 form .formWrap > div:last-child {
+    flex-wrap: nowrap;
+  }
+  #join .contsDetail .content1 form .formWrap > div:last-child span.message {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  #join .contsDetail .content1 form .formWrap > div .inputWrap {
+    width: 80%;
+  }
+  #join .contsDetail .content1 form .formWrap > div .inputWrap > label {
     word-break: keep-all;
+  }
+  #join .contsDetail .content1 form .formWrap > div span.message {
+    display: block;
+    margin-left: 180px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -7248,26 +7413,50 @@ input, button, textarea {
   #join .contsDetail .content1 form .formWrap > div:last-child {
     padding-bottom: 0;
   }
-  #join .contsDetail .content1 form .formWrap > div > label {
+  #join .contsDetail .content1 form .formWrap > div:last-child > label {
     width: 100%;
     height: auto;
     border-right: 0;
+    margin-right: 0;
+    padding-right: 0;
   }
-  #join .contsDetail .content1 form .formWrap > div input, #join .contsDetail .content1 form .formWrap > div select {
-    width: 100%;
-    height: 50px;
-  }
-  #join .contsDetail .content1 form .formWrap > div .agreementWrap {
+  #join .contsDetail .content1 form .formWrap > div:last-child .agreementWrap {
     width: 100%;
   }
-  #join .contsDetail .content1 form .formWrap > div .agreementWrap .agreementConts {
+  #join .contsDetail .content1 form .formWrap > div:last-child .agreementWrap .agreementConts {
     width: 100%;
     height: 400px;
     padding: 20px;
     box-sizing: border-box;
   }
-  #join .contsDetail .content1 form .formWrap > div .agreementWrap .agreementConts p {
+  #join .contsDetail .content1 form .formWrap > div:last-child .agreementWrap .agreementConts p {
     line-height: 1.8;
+  }
+  #join .contsDetail .content1 form .formWrap > div:last-child .agreementWrap .agreeCheck {
+    flex-wrap: wrap;
+  }
+  #join .contsDetail .content1 form .formWrap > div:last-child .agreementWrap .agreeCheck span.message {
+    margin-left: 0;
+  }
+  #join .contsDetail .content1 form .formWrap > div .inputWrap {
+    width: 100%;
+    flex-direction: column;
+  }
+  #join .contsDetail .content1 form .formWrap > div .inputWrap > label {
+    width: 100%;
+    height: auto;
+    border-right: 0;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  #join .contsDetail .content1 form .formWrap > div .inputWrap input, #join .contsDetail .content1 form .formWrap > div .inputWrap select {
+    width: 100%;
+    height: 50px;
+  }
+  #join .contsDetail .content1 form .formWrap > div span.message {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
   }
   #join .contsDetail .content1 .boardBtns a {
     padding: 10px 30px;

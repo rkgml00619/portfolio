@@ -1,4 +1,4 @@
-<%- include("../header", {jsFiles: [""]}) %>
+<%- include("../header", {jsFiles: ["join/join.js"]}) %>
 
     <div id="join" class="join">
         <div class="topSection">
@@ -20,53 +20,69 @@
                 <div class="contsWrap">
                     <div class="contsDetail">
                         <div class="content1">
-                            <form action="">
+                            <form id="userForm" action="/joinData" method="post">
                                 <div class="formWrap">
-                                    <div class="userId">
-                                        <label for="userId">아이디</label>
-                                        <input id="userId" type="text" placeholder="아이디를 입력해주세요.">
+                                    <div class="memberId">
+                                        <div class="inputWrap">
+                                            <label for="memberId">아이디</label>
+                                            <input id="memberId" name="memberId" type="text" placeholder="아이디를 입력해주세요." >
+                                        </div>
+                                        <span class="message">5자리 이상 영문 + 숫자조합</span>
                                     </div>
-                                    <div class="userPass">
-                                        <label for="userPass">비밀번호</label>
-                                        <input id="userPass" type="password" placeholder="비밀번호를 입력해주세요.">
+                                    <div class="memberPass">
+                                        <div class="inputWrap">
+                                            <label for="memberPass">비밀번호</label>
+                                            <input id="memberPass" name="memberPass" type="password" placeholder="비밀번호를 입력해주세요." >
+                                        </div>
+                                        <span class="message">특수기호 (@, $, !)를 포함한 5자리 이상 영문 + 숫자조합</span>
                                     </div>
                                     <div class="passCheck">
-                                        <label for="passCheck">비밀번호 확인</label>
-                                        <input id="passCheck" type="password" placeholder="비밀번호를 입력해주세요.">
+                                        <div class="inputWrap">
+                                            <label for="passCheck">비밀번호 확인</label>
+                                            <input id="passCheck" name="passCheck" type="password" placeholder="비밀번호를 입력해주세요." >
+                                        </div>
+                                        <span class="message"></span>
                                     </div>
                                     <div class="name">
-                                        <label for="name">이름</label>
-                                        <input id="name" type="text" placeholder="이름을 입력해주세요.">
+                                        <div class="inputWrap">
+                                            <label for="name">이름</label>
+                                            <input id="name" name="name" type="text" placeholder="이름을 입력해주세요." >
+                                        </div>
+                                        <span class="message"></span>
                                     </div>
                                     <div class="phone">
-                                        <label for="phone">전화번호</label>
-                                        <input id="phone" type="text" placeholder="전화번호를 입력해주세요.">
+                                        <div class="inputWrap">
+                                            <label for="phone">전화번호</label>
+                                            <input id="phone" name="phone" type="text" placeholder="전화번호를 입력해주세요." >
+                                        </div>
+                                        <span class="message"></span>
                                     </div>
                                     <div class="email">
-                                        <label for="email">이메일</label>
-                                        <input id="email" type="email" placeholder="이메일을 입력해주세요.">
+                                        <div class="inputWrap">
+                                            <label for="email">이메일</label>
+                                            <input id="email" name="email" type="email" placeholder="이메일을 입력해주세요." >
+                                        </div>
+                                        <span class="message"></span>
                                     </div>
                                     <div class="agreement">
-                                        <label for="agreement">이용약관</label>
+                                        <label for="agreement" class="agreement">이용약관</label>
 
                                         <div class="agreementWrap">
                                             <div class="agreementConts">
                                                 <%- include("agreement.ejs") %>
                                             </div>
                                             <div class="agreeCheck">
-                                                <input type="checkbox" name="" id="agree">
+                                                <input type="checkbox" name="agree" id="agree" >
                                                 <label for="agree">이용약관에 동의합니다.</label>
+                                                <span class="message">필수 체크입니다.</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="boardBtns">
-                                    <div class="editBtns">
-                                        <a class="deletePost" href="#">삭제</a>
-                                        <a class="editPost" href="#">수정</a>
-                                    </div>
-                                    <a class="goList" href="/html/festival/festival.html">등록</a>
+                                    <button class="cancelBtn" type="reset">취소</button>
+                                    <button class="submitBtn" type="submit">등록</button>
                                 </div>
                             </form>
                         </div>

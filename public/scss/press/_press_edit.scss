@@ -49,8 +49,14 @@
                                     font-weight: 300;
                                 }
                             }
+                            select {
+                                width: 200px;
+                            }
                             input#title, #textArea {
                                 width: 90%;
+                            }
+                            input#writeDate {
+                                width: 20%;
                             }
                             #textArea {
                                 height: 400px;
@@ -63,24 +69,23 @@
             .boardBtns {
                 width: 100%;
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-end;
                 align-items: center;
                 margin-bottom: 20px;
-                a {
+                button {
                     display: inline-block;
+                    background: #fff;
                     font-size: 1.6rem;
                     border: 1px solid #4A5677;
                     padding: 15px 40px;
                     color: #4A5677;
                     margin-left: 10px;
+                    cursor: pointer;
                     transition: all 0.5s;
                     &:hover {
                         background: #4A5677;
                         color: #fff;
                     }
-                }
-                .editBtns {
-
                 }
             }
         }

@@ -1,0 +1,109 @@
+<%- include("../header", {jsFiles: [""]}) %>
+
+    <div id="festival_edit" class="festival">
+        <div class="topSection">
+            <div class="overlay"></div>
+            <div class="center">
+                <div class="topTitWrap">
+                    <h2 class="topTit">추천행사</h2>
+                    <p class="topSubTit">Recommended Korean Events</p>
+                </div>
+            </div>
+        </div>
+        <div class="contentsWrap">
+            <div class="center">
+                <ul class="location">
+                    <li><a href="#">Home</a></li>
+                    <li class="locaArrow"><span  class="material-symbols-outlined">
+                        navigate_next</span></li>
+                    <li>
+                        <a href="#">추천행사</a>
+                    </li>
+                </ul>
+                <div class="contTitleWrap">
+                    <h2 class="contsTitle">추천행사</h2>
+                    <p class="contSubTitle">한국관광공사가 엄선하여 추천하는 행사들을 즐겨보세요.</p>
+                </div>
+
+                <div class="contsWrap">
+                    <div class="contsDetail">
+                        <div class="content1">
+                            <div class="boardConts">
+                                <form action="/festivalData" method="post" enctype="multipart/form-data">
+                                    <div class="formWrap">
+                                        <div class="location">
+                                            <label for="location">행사지역</label>
+                                            <select name="location" id="location">
+                                                <option value="서울">서울</option>
+                                                <option value="인천">인천</option>
+                                                <option value="대전">대전</option>
+                                                <option value="대구">대구</option>
+                                                <option value="광주">광주</option>
+                                                <option value="부산">부산</option>
+                                                <option value="울산">울산</option>
+                                                <option value="세종">세종</option>
+                                                <option value="경기도">경기도</option>
+                                                <option value="강원도">강원도</option>
+                                                <option value="충청북도">충청북도</option>
+                                                <option value="충청남도">충청남도</option>
+                                                <option value="경상북도">경상북도</option>
+                                                <option value="경상남도">경상남도</option>
+                                                <option value="전라북도">전라북도</option>
+                                                <option value="전라남도">전라남도</option>
+                                                <option value="제주도">제주도</option>
+                                            </select>
+                                        </div>
+                                        <div class="writer">
+                                            <label for="writer">작성자</label>
+                                            <% if (login) { %>
+                                                <input id="writer" name="writer" type="text" value="<%-login.name%>">
+                                            <% } else { %>
+                                                <input id="writer" name="writer" type="text" value="관리자">
+                                            <% } %>
+                                        </div>
+                                        <div class="festivalDate">
+                                            <label for="festivalStartDate">행사일</label>
+                                            <input id="festivalStartDate" name="festivalStartDate" type="date">
+                                            <span>~</span>
+                                            <input id="festivalLastDate" name="festivalLastDate" type="date">
+                                        </div>
+                                        <div class="festivalTime">
+                                            <label for="festivalStartTime">행사시간</label>
+                                            <input id="festivalStartTime" name="festivalStartTime" type="time">
+                                            <span>~</span>
+                                            <input id="festivalLastTime" name="festivalLastTime" type="time">
+                                        </div>
+                                        <div class="thumbImg">
+                                            <label for="thumbImg">썸네일</label>
+                                            <input id="thumbImg" name="thumbImg" type="file">
+                                        </div>
+                                        <div class="detailImg">
+                                            <label for="detailImg">상세 이미지</label>
+                                            <input id="detailImg" name="detailImg" type="file" multiple>
+                                        </div>
+                                        <div class="title">
+                                            <label for="title">행사이름</label>
+                                            <input id="title" name="title" type="text" placeholder="제목을 입력하세요">
+                                        </div>
+                                        <div class="textArea">
+                                            <label for="textArea">행사내용</label>
+                                            <textarea name="textArea" id="textArea"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="boardBtns">
+                                        <div class="editBtns">
+                                            <button class="cancelBtn" type="reset">취소</button>
+                                            <button class="submitBtn" type="submit">등록</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include("../footer") %>  

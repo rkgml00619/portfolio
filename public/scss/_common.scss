@@ -4,7 +4,7 @@
 
 html { font-size: 10px; scroll-behavior: smooth;}
 * { margin: 0; padding: 0;}
-body { line-height: 1; font-family: 'Noto Sans KR', sans-serif;}
+body, input, select, button, textarea { line-height: 1; font-family: 'Noto Sans KR', sans-serif;}
 ul, ol, li { list-style: none;}
 a { text-decoration: none;}
 h1, h2, h3, h4, h5, h6 { font-size: 100%;}

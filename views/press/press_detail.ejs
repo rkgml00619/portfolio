@@ -29,52 +29,49 @@
                     <h2 class="contsTitle">보도자료</h2>
                     <p class="contSubTitle">한국관광공사와 관련된 보도자료들을 확인해보세요.</p>
                 </div>
-
-                <div class="contsWrap">
-                    <div class="contsDetail">
-                        <div class="content1">
-                            <div class="boardConts">
-                                <div class="contsTop">
-                                    <div class="titleWrap">
-                                        <h3 class="title">한국관광공사, 배우 차은우 '한국방문의 해 홍보대사'로 위촉</h3>
-                                        <p class="uploadDate">2023-05-23</p>
+                <% if (data) { %>
+                    <div class="contsWrap">
+                        <div class="contsDetail">
+                            <div class="content1">
+                                <div class="boardConts">
+                                    <div class="contsTop">
+                                        <div class="titleWrap">
+                                            <h3 class="title"><%- data.title %></h3>
+                                            <p class="uploadDate">2023-05-23</p>
+                                        </div>
+                                        <div class="metaWrap">
+                                            <dl>
+                                                <dt>작성자</dt>
+                                                <dd><%- data.writer %></dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>담당부서</dt>
+                                                <dd><%- data.department %></dd>
+                                            </dl>
+                                        </div>
                                     </div>
-                                    <div class="metaWrap">
-                                        <dl>
-                                            <dt>작성자</dt>
-                                            <dd>한가희</dd>
-                                        </dl>
-                                        <dl>
-                                            <dt>담당부서</dt>
-                                            <dd>지역홍보팀</dd>
-                                        </dl>
+                                    <div class="contsBot">
+                                        <% for( let i = 0; i < data.detailImg.length; i++ ) { %>
+                                            <img src="/upload/<%- data.detailImg[i] %>">
+                                        <% } %>
+                                        <p>
+                                            <%- data.textArea %>
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="contsBot">
-                                    <img src="../../img/press/press_1.jpg" alt="">
-                                    <p>
-                                        문체부·공사, 한국방문의해위원회 'K관광 협력단' 출범식<br><br>
-                                        [서울=뉴스핌] 김용석 기자 = 한국관광공사는 전 세계 MZ세대를 대상으로 '2023~2024 한국방문의 해' 캠페인을 알릴 새 얼굴로 차은우를 선정하고, 23일 공사 하이커 그라운드(HiKR Ground)에서 '2023~2024 한국방문의 해 홍보대사' 위촉식을 열고 차은우를 홍보대사로 임명했다.<br><br>
-                                        
-                                        앞으로 공사는 차은우와 함께 한국의 다양한 매력을 소개하기 위한 영상 등 홍보콘텐츠 제작, 해외 한국관광 로드쇼 홍보, 한국방문의 해 온라인 캠페인 홍보등 다양한 활동을 진행하며, K컬처 매력을 전 세계에 알릴 예정이다.<br><br>
-
-                                        이번 출범식에서는 'K관광 협력단'의 첫 번째 실천적 성과로, 한국철도공사, 카카오모빌리티 등 총 9개 국내 교통 유관기관과 기업 대표가 참석한 가운데 '외래관광객 교통서비스 혁신 얼라이언스(연합) 선포식'도 진행했다.<br><br>
-                                        
-                                        한국관광공사 이재환 부사장은 "K팝 등 한류의 영향으로 한국문화와 한국에 대한 세계인의 이목이 집중되고 있는 가운데, 차은우 홍보대사의 긍정적 영향력이 방한 관광에 대한 관심으로 이어질 수 있도록 많은 활약을 기대한다"고 밝혔다.
-                                    </p>
+    
+                                <div class="boardBtns">
+                                    <div class="editBtns">
+                                        <a class="deletePost" href="#">삭제</a>
+                                        <!-- <a class="editPost" href="#">수정</a> -->
+                                    </div>
+                                    <a class="goList" href="/press">목록</a>
                                 </div>
-                            </div>
-
-                            <div class="boardBtns">
-                                <div class="editBtns">
-                                    <a class="deletePost" href="#">삭제</a>
-                                    <a class="editPost" href="#">수정</a>
-                                </div>
-                                <a class="goList" href="/html/festival/festival.html">목록</a>
                             </div>
                         </div>
                     </div>
-                </div>
+                 
+                <% } %>
             </div>
         </div>
     </div>

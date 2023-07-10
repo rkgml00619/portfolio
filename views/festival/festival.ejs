@@ -1,6 +1,6 @@
-<%- include("../header", {jsFiles: [""]}) %>
+<%- include("../header", {jsFiles: []}) %>
 
-    <div id="festival" class="press">
+    <div id="festival" class="festival">
         <div class="topSection">
             <div class="overlay"></div>
             <div class="center">
@@ -19,11 +19,6 @@
                     <li>
                         <a href="#">추천행사</a>
                     </li>
-                    <!-- <li class="locaArrow"><span  class="material-symbols-outlined">
-                        navigate_next</span></li>
-                    <li>
-                        <a href="#">추천행사</a>
-                    </li> -->
                 </ul>
                 <div class="contTitleWrap">
                     <h2 class="contsTitle">추천행사</h2>
@@ -43,9 +38,35 @@
                                         </button>
                                     </div>
                                 </div>
+                                
                                 <div class="boardBot">
                                     <div class="listWrap">
-                                        <div class="list">
+                                        <% if (data) { %>
+                                            <% for( let i = 0; i < data.length; i++ ) { %>
+                                                <div class="list">
+                                                    <a href="#">
+                                                        <div class="imgWrap">
+                                                            <img src="/upload/<%- data[i].thumbImg[0] %>">
+                                                        </div>
+                                                        <div class="contsWrap">
+                                                            <h5><%- data[i].title %></h5>
+                                                            <div class="date">
+                                                                <span class="material-symbols-outlined icons">calendar_month</span>
+                                                                <p class="date"><%- data[i].festivalStartDate %> ~ <%- data[i].festivalLastDate %></p>
+                                                            </div>
+                                                            <div class="location">
+                                                                <span class="material-symbols-outlined icons">location_on</span>
+                                                                <p class="date"><%- data[i].location %></p>
+                                                            </div>
+                                                            <button class="button" href="#">
+                                                                <span class="material-symbols-outlined plus">add</span>
+                                                            </button>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            <% } %>
+                                        <% } %>
+                                        <!-- <div class="list">
                                             <a href="#">
                                                 <div class="imgWrap">
                                                     <img src="/img/festival/festival_1.jpg">
@@ -233,7 +254,7 @@
                                                     </button>
                                                 </div>
                                             </a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 

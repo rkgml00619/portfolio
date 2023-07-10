@@ -16,20 +16,25 @@ window.onscroll = function(){
     scTop = window.scrollY;
 
     // header 색상 제어
-    if(scTop == 0){
-        if(mainLink == "/" && !mobile || !tablet){
-            headerWrap.classList.add("on");
+    if(scTop <= 0){
+        if(mainLink === "/"){
+            if(!mobile.matches || !tablet.matches){
+                headerWrap.classList.add("on");
+            }
+            else {
+                headerWrap.classList.remove("on");
+            }
         }
         else{
             headerWrap.classList.remove("on");
         }
     }
-    else if(scTop > 0 && mobile || tablet){
+    else if(scTop > 0 && mobile.matches || tablet.matches){
         headerWrap.classList.remove("on");
     }
-    else if(scTop <= 0 || !mobile || !tablet){
-        headerWrap.classList.add("on");
-    }   
+    else {
+        headerWrap.classList.remove("on");
+    }
     
 
     // 메인페이지 섹션2(추천행사) 오른쪽 리스트 노출

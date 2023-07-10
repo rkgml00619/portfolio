@@ -1,6 +1,5 @@
 // 헤더의 배경 제어 및 서브메뉴 노출 제어
 const headerWrap = document.querySelector("#header");
-// let scTop = 0;
 
 // 로그인 버튼 클릭 시
 const loginBtns = document.querySelector("#header .joinWrap .login");
@@ -22,6 +21,9 @@ let mobileSubMenuList;
 
 /******************************************************************************************************************************************/
 
+if(mainLink !== "/"){
+    headerWrap.classList.remove("on");
+}
 
 // header에 마우스 올렸을 때 클래스 제어
 headerWrap.onmouseenter = function(){

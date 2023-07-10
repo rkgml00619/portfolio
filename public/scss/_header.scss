@@ -80,7 +80,7 @@
                             color: #000;
                             font-size: 2rem;
                             font-weight: 500;
-                            padding: 25px 0 10px;
+                            padding: 15px 0;
                             transition: all 0.5s;
                             &:hover {
                                 color: #d22a49;
@@ -127,6 +127,13 @@
                 }
             }
             .joinWrap {
+                display: flex;
+                align-items: center;
+                .loginName {
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: #000;
+                }
                 a {
                     display: inline-block;
                     font-size: 1.2rem;
@@ -135,10 +142,9 @@
                     background: #f9f9f9;
                     border: 1px solid  transparent;
                     padding: 10px 22px;
-                    margin-top: 10px;
-                    margin-left: 6px;
                     border-radius: 5px;
                     text-transform: uppercase;
+                    margin-left: 10px;
                     transition: all 0.5s;
                     &:hover {
                         background: #4A5677;
@@ -243,6 +249,9 @@
             }
         }
         .joinWrap {
+            .loginName {
+                color: #fff;
+            }
             a {
                 color: #fff;
                 border: 1px solid #ccc;
@@ -275,6 +284,11 @@
                 a {
                     background: transparent;
                     border: 1px solid #ccc;
+                    &:hover {
+                        background: #4A5677;
+                        border-color: #4A5677;
+                        color: #fff;
+                    }
                 }
             }
         }
