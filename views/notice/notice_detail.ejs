@@ -1,0 +1,108 @@
+<%- include("../header", {jsFiles: [""]}) %>
+
+    <div id="notice_detail" class="notice">
+        <div class="topSection">
+            <div class="overlay"></div>
+            <div class="center">
+                <div class="topTitWrap">
+                    <h2 class="topTit">공지사항</h2>
+                    <p class="topSubTit">Korea Tourism Organization Notice</p>
+                </div>
+            </div>
+        </div>
+        <div class="contentsWrap">
+            <div class="center">
+                <ul class="location">
+                    <li><a href="#">Home</a></li>
+                    <li class="locaArrow"><span  class="material-symbols-outlined">
+                        navigate_next</span></li>
+                    <li>
+                        <a href="#">공지사항</a>
+                    </li>
+                </ul>
+                <div class="contTitleWrap">
+                    <h2 class="contsTitle">공지사항</h2>
+                    <p class="contSubTitle">한국관광공사 이용 시 공지사항을 참고해주세요.</p>
+                </div>
+                <% if (data) { %>
+                    <div class="contsWrap">
+                        <div class="contsDetail">
+                            <div class="content1">
+                                <div class="boardConts">
+                                    <div class="contsTop">
+                                        <div class="titleWrap">
+                                            <h3 class="title"><%- data.title %></h3>
+                                            <p class="uploadDate"><%- data.writeDate %></p>
+                                        </div>
+                                        <div class="metaWrap">
+                                            <dl>
+                                                <dt>작성자</dt>
+                                                <dd><%- data.writer %></dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>담당부서</dt>
+                                                <dd><%- data.department %></dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="contsBot">
+                                        <% for( let i = 0; i < data.addFiles.length; i++ ) { %>
+                                            <% if (data.addFiles[i].includes("jpg") || data.addFiles[i].includes("png")){ %>
+                                                <img src="/upload/<%- data.addFiles[i] %>">              
+                                            <% } %>
+                                        <% } %>
+                                        <p>
+                                            <%- data.textArea %>
+                                        </p>
+                                    </div>
+
+                                    <% if (data.addFiles) { %>
+                                        <div class="addFiles">
+                                            <% for( let i = 0; i < data.addFiles.length; i++ ) { %>
+                                                <% if (data.addFiles[i].includes("pdf")) { %>
+                                                    <div class="addFileList">
+                                                        <h5>첨부파일</h5>
+                                                        <p><%- data.addFiles[i] %></p>
+                                                        <a href="/upload/<%- data.addFiles[i] %>" download="">
+                                                            다운로드
+                                                        </a>
+                                                        <a href="/upload/<%- data.addFiles[i] %>" target="_blank">
+                                                            미리보기
+                                                        </a>
+                                                    </div>
+                                                <% } else { %>
+                                                    <div class="addFileList">
+                                                        <h5>첨부파일</h5>
+                                                        <p><%- data.addFiles[i] %></p>
+                                                        <a href="/upload/<%- data.addFiles[i] %>" download="">
+                                                            다운로드
+                                                        </a>
+                                                    </div>
+                                                <% } %>
+                                            <% } %>
+                                        </div>
+                                    <% } %>
+                                </div>
+    
+                                <div class="boardBtns">
+                                    <% if (login) { %>
+                                        <% if (login.memberId === "admin") { %>
+                                            <div class="editBtns">
+                                                <form action="/notice/detail/delete/<%- data.noticeCount %>">
+                                                    <button class="deletePost" type="submit">삭제</button>
+                                                </form>
+                                            </div>
+                                        <% } %>
+                                    <% } %>
+                                    <a class="goList" href="/notice">목록</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+<%- include("../footer") %>  

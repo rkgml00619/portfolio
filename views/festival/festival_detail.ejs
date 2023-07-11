@@ -1,0 +1,88 @@
+<%- include("../header", {jsFiles: [""]}) %>
+
+    <div id="festival_detail" class="festival">
+        <div class="topSection">
+            <div class="overlay"></div>
+            <div class="center">
+                <div class="topTitWrap">
+                    <h2 class="topTit">추천행사</h2>
+                    <p class="topSubTit">Recommended Korean Events</p>
+                </div>
+            </div>
+        </div>
+        <div class="contentsWrap">
+            <div class="center">
+                <ul class="location">
+                    <li><a href="#">Home</a></li>
+                    <li class="locaArrow"><span  class="material-symbols-outlined">
+                        navigate_next</span></li>
+                    <li>
+                        <a href="#">추천행사</a>
+                    </li>
+                </ul>
+                <div class="contTitleWrap">
+                    <h2 class="contsTitle">추천행사</h2>
+                    <p class="contSubTitle">한국관광공사가 엄선하여 추천하는 행사들을 즐겨보세요.</p>
+                </div>
+                <% if (data) { %>
+                    <div class="contsWrap">
+                        <div class="contsDetail">
+                            <div class="content1">
+                                <div class="boardConts">
+                                    <div class="contsTop">
+                                        <div class="titleWrap">
+                                            <h3 class="title"><%- data.title %></h3>
+                                        </div>
+                                        <div class="metaWrap">
+                                            <dl>
+                                                <dt>작성자</dt>
+                                                <dd><%- data.writer %></dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>행사지역</dt>
+                                                <dd><%- data.location %></dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>행사일</dt>
+                                                <dd><%- data.festivalStartDate %> ~ <%- data.festivalLastDate %></dd>
+                                            </dl>
+                                            <% if (data.festivalStartTime) { %>
+                                                <dl>
+                                                    <dt>행사시간</dt>
+                                                    <dd><%- data.festivalStartTime %> ~ <%- data.festivalLastTime %></dd>
+                                                </dl>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="contsBot">
+                                        <% for( let i = 0; i < data.detailImg.length; i++ ) { %>
+                                            <img src="/upload/<%- data.detailImg[i] %>">
+                                        <% } %>
+                                        <p>
+                                            <%- data.textArea %>
+                                        </p>
+                                    </div>
+                                </div>
+    
+                                <div class="boardBtns">
+                                    <% if (login) { %>
+                                        <% if (login.memberId === "admin") { %>
+                                            <div class="editBtns">
+                                                <form action="/festival/detail/delete/<%- data.festivalCount %>">
+                                                    <button class="deletePost" type="submit">삭제</button>
+                                                </form>
+                                            </div>
+                                        <% } %>
+                                    <% } %>
+                                    <a class="goList" href="/festival">목록</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+<%- include("../footer") %>  

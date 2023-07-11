@@ -61,10 +61,15 @@
                                 </div>
     
                                 <div class="boardBtns">
-                                    <div class="editBtns">
-                                        <a class="deletePost" href="#">삭제</a>
-                                        <!-- <a class="editPost" href="#">수정</a> -->
-                                    </div>
+                                    <% if (login) { %>
+                                        <% if (login.memberId === "admin") { %>
+                                            <div class="editBtns">
+                                                <form action="/press/detail/delete/<%- data.pressCount %>">
+                                                    <button class="deletePost" type="submit">삭제</button>
+                                                </form>
+                                            </div>
+                                        <% } %>
+                                    <% } %>
                                     <a class="goList" href="/press">목록</a>
                                 </div>
                             </div>

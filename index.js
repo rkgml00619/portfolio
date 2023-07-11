@@ -97,8 +97,11 @@ const upload = multer({ storage: storage })
 
 // 메인페이지
 app.get("/", (req, res)=>{
-    res.render("index.ejs", {login: req.user});
-    console.log(req.user);
+    db.collection("festival").find().sort({festivalCount: -1}).toArray((err, festivalResult)=> {
+        db.collection("press").find().sort({pressCount: -1}).toArray((err, pressResult)=> {
+            res.render("index.ejs", {login: req.user, festivalResult: festivalResult, pressResult: pressResult});
+        })
+    })
 });
 
 
@@ -132,27 +135,62 @@ app.get("/business04", (req, res)=>{
 });
 
 
-// 추천행사 
+// festival 
 app.get("/festival", (req, res)=>{
-    db.collection("festival").find().sort({festivalCount: -1}).toArray((err, result)=> {
-        res.render("festival/festival.ejs", {login: req.user, data: result});
+    db.collection("festival").find().toArray((err, total)=>{
+        let totalData = total.length;
+        let pageNumber = (req.query.page == null) ? 1 : Number(req.query.page);
+        let perpage = 9;
+        let blockCount = 5;
+        let blockNum = Math.ceil(pageNumber / blockCount);
+        let blockStart = ((blockNum - 1) * blockCount) + 1;
+        let blockEnd = blockStart + blockCount - 1;
+        let totalPaging = Math.ceil(totalData / perpage);
+
+        if(blockEnd > totalPaging){
+            blockEnd = totalPaging;
+        }
+
+        let totalBlock = Math.ceil(totalPaging / blockCount);
+        let startFrom = (pageNumber - 1) * perpage;
+
+        db.collection("festival").find().sort({festivalCount: -1}).skip(startFrom).limit(perpage).toArray((err, result)=>{
+            res.render("festival/festival.ejs", {
+                login: req.user, 
+                data: result,
+                totalData : totalData,
+                totalPaging : totalPaging,
+                blockStart : blockStart,
+                blockEnd : blockEnd,
+                blockNum : blockNum,
+                totalBlock : totalBlock,
+                pageNumber : pageNumber,
+                inputTxt: ""
+            });
+        })
     })
 });
-// 추천행사 등록
+// festival 상세페이지
+app.get("/festival/detail/:festivalCount", (req, res)=>{
+    db.collection("festival").findOne({festivalCount: Number(req.params.festivalCount)}, (err, result)=>{
+        res.render("festival/festival_detail.ejs", {login: req.user, data: result});
+    })
+});
+// festival 등록
 app.get("/festival/register", (req, res)=>{
     res.render("festival/festival_edit.ejs", {login: req.user});
 });
-// 추천행사 등록 데이터
+// festival 등록 데이터
 const festivalImgUpload = upload.fields([{name: "thumbImg"}, {name: "detailImg"}]);
 app.post("/festivalData", festivalImgUpload, (req, res)=>{
-    let pressThumbImgs = [];
-    let pressDetailImgs = [];
+    let festivalThumbImgs = [];
+    let festivalDetailImgs = [];
 
     for(let i = 0; i < req.files["thumbImg"].length; i++){
-        pressThumbImgs[i] = req.files["thumbImg"][i].filename;
+        festivalThumbImgs[i] = req.files["thumbImg"][i].filename;
     }
     for(let i = 0; i < req.files["detailImg"].length; i++){
-        pressDetailImgs[i] = req.files["detailImg"][i].filename;
+        festivalDetailImgs[i] = req.files["detailImg"][i].filename;
     }
 
     db.collection("count").findOne({title: "festival"}, (err, festivalNum)=>{
@@ -164,25 +202,148 @@ app.post("/festivalData", festivalImgUpload, (req, res)=>{
             festivalLastDate: req.body.festivalLastDate,
             festivalStartTime: req.body.festivalStartTime,
             festivalLastTime: req.body.festivalLastTime,
-            thumbImg: pressThumbImgs,
-            detailImg: pressDetailImgs,
+            thumbImg: festivalThumbImgs,
+            detailImg: festivalDetailImgs,
             title: req.body.title,
             textArea: req.body.textArea,
         }, (err, result)=>{
             db.collection("count").updateOne({title: "festival"}, {$inc: {festivalCount: 1}}, (err, result)=> {
-                res.redirect("/festival/register")
+                res.redirect(`/festival/detail/${festivalNum.festivalCount}`)
             })
         })
     })
 });
+// festival 게시물 삭제 요청
+app.get("/festival/detail/delete/:festivalCount", (req, res)=>{
+    db.collection("festival").deleteOne({festivalCount: Number(req.params.festivalCount)}, (err, result)=>{
+      res.redirect("/festival")
+    })
+})
+// festival 게시물 검색 기능
+app.get("/festivalSearch", (req, res)=>{
+    let check = [
+        {$search: {
+            index: "festivalSearch", 
+            text: {query: req.query.festivalSearch, path: req.query.findSelectValue}}
+        },
+        {$sort: {festivalCount: -1}}
+    ];
+
+    db.collection("festival").aggregate(check).toArray((err, total)=>{
+
+        let totalData = total.length;
+        let pageNumber = (req.query.page == null) ? 1 : Number(req.query.page);
+        let perpage = 9;
+        let blockCount = 5;
+        let blockNum = Math.ceil(pageNumber / blockCount);
+        let blockStart = ((blockNum - 1) * blockCount) + 1;
+        let blockEnd = blockStart + blockCount - 1;
+        let totalPaging = Math.ceil(totalData / perpage);
+        
+        if(blockEnd > totalPaging){
+            blockEnd = totalPaging;
+        }
+
+        let totalBlock = Math.ceil(totalPaging / blockCount);
+        let startFrom = (pageNumber - 1) * perpage;
+
+        db.collection("festival").aggregate(check).sort({festivalCount: -1}).skip(startFrom).limit(perpage).toArray((err, result)=>{
+            res.render("festival/festival.ejs", {
+                login: req.user, 
+                data: result, 
+                inputTxt: req.query.festivalSearch,
+                totalData : totalData,
+                totalPaging : totalPaging,
+                blockStart : blockStart,
+                blockEnd : blockEnd,
+                blockNum : blockNum,
+                totalBlock : totalBlock,
+                pageNumber : pageNumber 
+            })
+        })
+    })
+})
 
 
-// 알림마당 notice
+// notice
 app.get("/notice", (req, res)=>{
-    res.render("notice/notice.ejs", {login: req.user});
-});
+    db.collection("notice").find().toArray((err, total)=>{
+        let totalData = total.length;
+        let pageNumber = (req.query.page == null) ? 1 : Number(req.query.page);
+        let perpage = 6;
+        let blockCount = 5;
+        let blockNum = Math.ceil(pageNumber / blockCount);
+        let blockStart = ((blockNum - 1) * blockCount) + 1;
+        let blockEnd = blockStart + blockCount - 1;
+        let totalPaging = Math.ceil(totalData / perpage);
 
-// 알림마당 press
+        if(blockEnd > totalPaging){
+            blockEnd = totalPaging;
+        }
+
+        let totalBlock = Math.ceil(totalPaging / blockCount);
+        let startFrom = (pageNumber - 1) * perpage;
+
+        db.collection("notice").find().sort({noticeCount: -1}).skip(startFrom).limit(perpage).toArray((err, result)=>{
+            res.render("notice/notice.ejs", {
+                login: req.user, 
+                data: result,
+                totalData : totalData,
+                totalPaging : totalPaging,
+                blockStart : blockStart,
+                blockEnd : blockEnd,
+                blockNum : blockNum,
+                totalBlock : totalBlock,
+                pageNumber : pageNumber 
+            });
+        })
+    })
+});
+// notice 등록
+app.get("/notice/register", (req, res)=>{
+    res.render("notice/notice_edit.ejs", {login: req.user});
+});
+// notice 등록 데이터
+const noticeImgUpload = upload.fields([{name: "addFiles"}]);
+app.post("/noticeData", noticeImgUpload, (req, res)=>{
+    let noticeFiles = [];      
+
+    if(req.files["addFiles"].length > 0){
+        for(let i = 0; i < req.files["addFiles"].length; i++){
+            noticeFiles[i] = req.files["addFiles"][i].filename;
+        }
+    }
+    db.collection("count").findOne({title: "notice"}, (err, noticeNum)=>{ 
+        db.collection("notice").insertOne({
+            noticeCount: noticeNum.noticeCount,
+            department: req.body.department,
+            writer: req.body.writer,
+            writeDate: req.body.writeDate,
+            addFiles: noticeFiles,
+            title: req.body.title,
+            textArea: req.body.textArea,
+        }, (err, result)=>{
+            db.collection("count").updateOne({title: "notice"}, {$inc: {noticeCount: 1}}, (err, result)=> {
+                res.redirect(`/notice/detail/${noticeNum.noticeCount}`)
+            })
+        })
+    })
+});
+// notice 상세
+app.get("/notice/detail/:noticeCount", (req, res)=>{
+    db.collection("notice").findOne({noticeCount: Number(req.params.noticeCount)}, (err, result)=>{
+        res.render("notice/notice_detail.ejs", {login: req.user, data: result});
+    })
+});
+// notice 게시물 삭제 요청
+app.get("/notice/detail/delete/:noticeCount", (req, res)=>{
+    db.collection("notice").deleteOne({noticeCount: Number(req.params.noticeCount)}, (err, result)=>{
+      res.redirect("/notice")
+    })
+})
+
+
+// press
 app.get("/press", (req, res)=>{
     db.collection("press").find().toArray((err, total)=>{
         let totalData = total.length;
@@ -216,17 +377,17 @@ app.get("/press", (req, res)=>{
         })
     })
 });
-// 알림마당 press 상세
+// press 상세
 app.get("/press/detail/:pressCount", (req, res)=>{
     db.collection("press").findOne({pressCount: Number(req.params.pressCount)}, (err,result)=> {
         res.render("press/press_detail.ejs", {login: req.user, data: result});
     })
 });
-// 알림마당 press 등록
+// press 등록
 app.get("/press/register", (req, res)=>{
     res.render("press/press_edit.ejs", {login: req.user});
 });
-// 알림마당 press 데이터
+// press 등록 데이터
 const pressImgUpload = upload.fields([{name: "thumbImg"}, {name: "detailImg"}]);
 app.post("/pressData", pressImgUpload, (req, res)=>{
     let pressThumbImgs = [];
@@ -238,9 +399,6 @@ app.post("/pressData", pressImgUpload, (req, res)=>{
     for(let i = 0; i < req.files["detailImg"].length; i++){
         pressDetailImgs[i] = req.files["detailImg"][i].filename;
     }
-
-    console.log(req.files["thumbImg"]);
-    console.log(req.files["detailImg"]);
 
     db.collection("count").findOne({title: "press"}, (err, pressNum)=>{
         db.collection("press").insertOne({
@@ -254,23 +412,17 @@ app.post("/pressData", pressImgUpload, (req, res)=>{
             textArea: req.body.textArea,
         }, (err, result)=>{
             db.collection("count").updateOne({title: "press"}, {$inc: {pressCount: 1}}, (err, result)=> {
-                res.redirect("/press/register")
+                res.redirect(`/press/detail/${pressNum.pressCount}`)
             })
         })
     })
 });
-// 게시물 삭제 요청
-app.get("/board/detail/delete/:pressCount", (req, res)=>{
+// press 게시물 삭제 요청
+app.get("/press/detail/delete/:pressCount", (req, res)=>{
     db.collection("press").deleteOne({pressCount: Number(req.params.pressCount)}, (err, result)=>{
       res.redirect("/press")
     })
 })
-
-
-// 국민참여
-app.get("/smart_inquiry", (req, res)=>{
-    res.render("customer/smart_inquiry.ejs", {login: req.user});
-});
 
 
 // 회원가입

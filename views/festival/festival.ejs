@@ -1,4 +1,4 @@
-<%- include("../header", {jsFiles: []}) %>
+<%- include("../header", {jsFiles: ["sub/festival.js"]}) %>
 
     <div id="festival" class="festival">
         <div class="topSection">
@@ -28,11 +28,25 @@
                 <div class="contsWrap">
                     <div class="contsDetail">
                         <div class="content1">
-                            <form action="" class="boardWrap">
+                            <form action="/festivalSearch" method="get" class="boardWrap">
                                 <div class="boardTop">
-                                    <p class="boardNum">총 <span>70</span>건의 추천행사가 있습니다.</p>
+                                    <p class="boardNum">총 <span><%- totalData %></span>건의 추천행사가 있습니다.</p>
                                     <div class="searchForm" action="">
-                                        <input class="festivalSearch" type="text" placeholder="검색어를 입력하세요">
+                                        <div class="selWrap">
+                                            <div class="findBtn">
+                                                <a class="findSelBtn" href="">
+                                                    행사명
+                                                </a>
+                                                <span class="material-symbols-outlined moreIcon">expand_more</span>
+                                            </div>
+                                            <ul class="findSelect">
+                                                <li data-findValue="title">행사명</li>
+                                                <li data-findValue="location">지역</li>
+                                            </ul>
+
+                                            <input type="hidden" name="findSelectValue" id="findSelectValue" value="title">
+                                        </div>
+                                        <input class="festivalSearch" name="festivalSearch" type="text" placeholder="검색어를 입력하세요" value="<%- inputTxt %>">
                                         <button class="searchBtn" type="submit">
                                             <img src="/img/ico_board_search_white.svg" alt="">
                                         </button>
@@ -44,7 +58,7 @@
                                         <% if (data) { %>
                                             <% for( let i = 0; i < data.length; i++ ) { %>
                                                 <div class="list">
-                                                    <a href="#">
+                                                    <a href="/festival/detail/<%- data[i].festivalCount %>">
                                                         <div class="imgWrap">
                                                             <img src="/upload/<%- data[i].thumbImg[0] %>">
                                                         </div>
@@ -66,246 +80,41 @@
                                                 </div>
                                             <% } %>
                                         <% } %>
-                                        <!-- <div class="list">
-                                            <a href="#">
-                                                <div class="imgWrap">
-                                                    <img src="/img/festival/festival_1.jpg">
-                                                </div>
-                                                <div class="contsWrap">
-                                                    <h5>사계축제 꽃 기억해 (봄)</h5>
-                                                    <div class="date">
-                                                        <span class="material-symbols-outlined icons">calendar_month</span>
-                                                        <p class="date">5. 19. ~ 28. / 10:00~17:00</p>
-                                                    </div>
-                                                    <div class="location">
-                                                        <span class="material-symbols-outlined icons">location_on</span>
-                                                        <p class="date">서울시 도봉구</p>
-                                                    </div>
-                                                    <button class="button" href="#">
-                                                        <span class="material-symbols-outlined plus">add</span>
-                                                    </button>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="list">
-                                            <a href="#">
-                                                <div class="imgWrap">
-                                                    <img src="/img/festival/festival_2.jpg">
-                                                </div>
-                                                <div class="contsWrap">
-                                                    <h5>사계축제 꽃 기억해 (봄)</h5>
-                                                    <div class="date">
-                                                        <span class="material-symbols-outlined icons">calendar_month</span>
-                                                        <p class="date">5. 19. ~ 28. / 10:00~17:00</p>
-                                                    </div>
-                                                    <div class="location">
-                                                        <span class="material-symbols-outlined icons">location_on</span>
-                                                        <p class="date">서울시 도봉구</p>
-                                                    </div>
-                                                    <button class="button" href="#">
-                                                        <span class="material-symbols-outlined plus">add</span>
-                                                    </button>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="list">
-                                            <a href="#">
-                                                <div class="imgWrap">
-                                                    <img src="/img/festival/festival_3.png">
-                                                </div>
-                                                <div class="contsWrap">
-                                                    <h5>사계축제 꽃 기억해 (봄)</h5>
-                                                    <div class="date">
-                                                        <span class="material-symbols-outlined icons">calendar_month</span>
-                                                        <p class="date">5. 19. ~ 28. / 10:00~17:00</p>
-                                                    </div>
-                                                    <div class="location">
-                                                        <span class="material-symbols-outlined icons">location_on</span>
-                                                        <p class="date">서울시 도봉구</p>
-                                                    </div>
-                                                    <button class="button" href="#">
-                                                        <span class="material-symbols-outlined plus">add</span>
-                                                    </button>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="list">
-                                            <a href="#">
-                                                <div class="imgWrap">
-                                                    <img src="/img/festival/festival_4.png">
-                                                </div>
-                                                <div class="contsWrap">
-                                                    <h5>사계축제 꽃 기억해 (봄)</h5>
-                                                    <div class="date">
-                                                        <span class="material-symbols-outlined icons">calendar_month</span>
-                                                        <p class="date">5. 19. ~ 28. / 10:00~17:00</p>
-                                                    </div>
-                                                    <div class="location">
-                                                        <span class="material-symbols-outlined icons">location_on</span>
-                                                        <p class="date">서울시 도봉구</p>
-                                                    </div>
-                                                    <button class="button" href="#">
-                                                        <span class="material-symbols-outlined plus">add</span>
-                                                    </button>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="list">
-                                            <a href="#">
-                                                <div class="imgWrap">
-                                                    <img src="/img/festival/festival_5.jpg">
-                                                </div>
-                                                <div class="contsWrap">
-                                                    <h5>사계축제 꽃 기억해 (봄)</h5>
-                                                    <div class="date">
-                                                        <span class="material-symbols-outlined icons">calendar_month</span>
-                                                        <p class="date">5. 19. ~ 28. / 10:00~17:00</p>
-                                                    </div>
-                                                    <div class="location">
-                                                        <span class="material-symbols-outlined icons">location_on</span>
-                                                        <p class="date">서울시 도봉구</p>
-                                                    </div>
-                                                    <button class="button" href="#">
-                                                        <span class="material-symbols-outlined plus">add</span>
-                                                    </button>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="list">
-                                            <a href="#">
-                                                <div class="imgWrap">
-                                                    <img src="/img/festival/festival_6.png">
-                                                </div>
-                                                <div class="contsWrap">
-                                                    <h5>사계축제 꽃 기억해 (봄)</h5>
-                                                    <div class="date">
-                                                        <span class="material-symbols-outlined icons">calendar_month</span>
-                                                        <p class="date">5. 19. ~ 28. / 10:00~17:00</p>
-                                                    </div>
-                                                    <div class="location">
-                                                        <span class="material-symbols-outlined icons">location_on</span>
-                                                        <p class="date">서울시 도봉구</p>
-                                                    </div>
-                                                    <button class="button" href="#">
-                                                        <span class="material-symbols-outlined plus">add</span>
-                                                    </button>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="list">
-                                            <a href="#">
-                                                <div class="imgWrap">
-                                                    <img src="/img/festival/festival_7.jpg">
-                                                </div>
-                                                <div class="contsWrap">
-                                                    <h5>사계축제 꽃 기억해 (봄)</h5>
-                                                    <div class="date">
-                                                        <span class="material-symbols-outlined icons">calendar_month</span>
-                                                        <p class="date">5. 19. ~ 28. / 10:00~17:00</p>
-                                                    </div>
-                                                    <div class="location">
-                                                        <span class="material-symbols-outlined icons">location_on</span>
-                                                        <p class="date">서울시 도봉구</p>
-                                                    </div>
-                                                    <button class="button" href="#">
-                                                        <span class="material-symbols-outlined plus">add</span>
-                                                    </button>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="list">
-                                            <a href="#">
-                                                <div class="imgWrap">
-                                                    <img src="/img/festival/festival_8.jpg">
-                                                </div>
-                                                <div class="contsWrap">
-                                                    <h5>사계축제 꽃 기억해 (봄)</h5>
-                                                    <div class="date">
-                                                        <span class="material-symbols-outlined icons">calendar_month</span>
-                                                        <p class="date">5. 19. ~ 28. / 10:00~17:00</p>
-                                                    </div>
-                                                    <div class="location">
-                                                        <span class="material-symbols-outlined icons">location_on</span>
-                                                        <p class="date">서울시 도봉구</p>
-                                                    </div>
-                                                    <button class="button" href="#">
-                                                        <span class="material-symbols-outlined plus">add</span>
-                                                    </button>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="list">
-                                            <a href="#">
-                                                <div class="imgWrap">
-                                                    <img src="/img/festival/festival_9.png">
-                                                </div>
-                                                <div class="contsWrap">
-                                                    <h5>사계축제 꽃 기억해 (봄)</h5>
-                                                    <div class="date">
-                                                        <span class="material-symbols-outlined icons">calendar_month</span>
-                                                        <p class="date">5. 19. ~ 28. / 10:00~17:00</p>
-                                                    </div>
-                                                    <div class="location">
-                                                        <span class="material-symbols-outlined icons">location_on</span>
-                                                        <p class="date">서울시 도봉구</p>
-                                                    </div>
-                                                    <button class="button" href="#">
-                                                        <span class="material-symbols-outlined plus">add</span>
-                                                    </button>
-                                                </div>
-                                            </a>
-                                        </div> -->
                                     </div>
                                 </div>
 
-                                <div class="boardBtns">
-                                    <a class="newPost" href="#">글쓰기</a>
-                                </div>
+                                <% if (login) { %>
+                                    <% if (login.memberId === "admin") { %>
+                                        <div class="boardBtns">
+                                            <a class="newPost" href="#">글쓰기</a>
+                                        </div>
+                                    <% } %>
+                                <% } %>
                             </form>
 
                             <div class="pagenation">
-                                <a class="frontMost" href="#">
-                                    <span class="material-symbols-outlined">
-                                        keyboard_double_arrow_left</span>
-                                </a>
-                                <a class="front" href="#">
-                                    <span class="material-symbols-outlined">
-                                        keyboard_arrow_left</span>
-                                </a>
-                                <div class="numberWrap">
-                                    <a class="number active" href="#">1</a>
-                                    <a class="number" href="#">2</a>
-                                    <a class="number" href="#">3</a>
-                                    <a class="number" href="#">4</a>
-                                    <a class="number" href="#">5</a>
-                                </div>
-                                <a class="back" href="#">
-                                    <span class="material-symbols-outlined">
-                                        keyboard_arrow_right</span>
-                                </a>
-                                <a class="backMost" href="#">
-                                    <span class="material-symbols-outlined">
-                                        keyboard_double_arrow_right</span>
-                                </a>
-                            </div>
-                            <div class="pagenationM">                                
-                                <a class="frontMost" href="#">
-                                    <span class="material-symbols-outlined pageArrow">
-                                        keyboard_double_arrow_left</span>
-                                </a>
-                                <a class="front" href="#">
-                                    <span class="material-symbols-outlined pageArrow">
-                                        keyboard_arrow_left</span>
-                                </a>
-                                <a class="number active" href="#"><span>1</span> / 20</a>
-                                <a class="back" href="#">
-                                    <span class="material-symbols-outlined pageArrow">
-                                        keyboard_arrow_right</span>
-                                </a>
-                                <a class="backMost" href="#">
-                                    <span class="material-symbols-outlined pageArrow">
-                                        keyboard_double_arrow_right</span>
-                                </a>
+                                <% if (blockStart > totalBlock) { %>
+                                    <a class="front" href="?page=<%- blockStart - 1 %>">
+                                        <span class="material-symbols-outlined">
+                                            keyboard_arrow_left</span>
+                                    </a>
+                                <% } %>
+                                <% for( let i = blockStart; i <= blockEnd; i++ ) { %>
+                                    <div class="numberWrap">
+                                        <% if (pageNumber == i) { %>
+                                            <a class="number active" href="?page=<%- i %>"><%- i %></a>
+                                        <% } else { %>
+                                            <a class="number" href="?page=<%- i %>"><%- i %></a>
+                                        <% } %>
+                                    </div>
+                                <% } %>
+
+                                <% if (blockNum < totalBlock) { %>
+                                    <a class="back" href="?page=<%- blockEnd + 1 %>">
+                                        <span class="material-symbols-outlined">
+                                            keyboard_arrow_right</span>
+                                    </a>
+                                <% } %>
                             </div>
                         </div>
                     </div>

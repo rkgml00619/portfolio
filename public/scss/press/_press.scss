@@ -38,30 +38,6 @@
                             font-weight: 600;
                         }
                     }
-                    .searchForm {
-                        display: flex;
-                        align-items: center;
-                        .festivalSearch {
-                            width: 350px;
-                            height: 50px;
-                            box-sizing: border-box;
-                            padding: 15px;
-                            border: 1px solid #ccc;
-                            margin-right: 5px;
-                            &::placeholder {
-                                font-size: 1.6rem;
-                                line-height: 1;
-                                color: #999;
-                            }
-                        }
-                        .searchBtn {
-                            width: 50px; height: 50px;
-                            box-sizing: border-box;
-                            border: 0;
-                            background: #4A5677;
-                            color: #fff;
-                        }
-                    }
                 }
                 .boardBot {
                     width: 100%;
@@ -78,7 +54,8 @@
                             a {
                                 .imgWrap {
                                     img {
-                                        transform: translate(-50%, -50%) scale(1.1);
+                                        transform: scale(1.1);
+                                        filter: grayscale(0);
                                     }
                                 }
                                 .infoWrap {
@@ -105,11 +82,13 @@
                                 border: 1px solid #ddd;
                                 overflow: hidden;
                                 position: relative;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
                                 img {
-                                    width: 100%; height: 100%;
-                                    position: absolute;
-                                    top: 50%; left: 50%;
-                                    transform: translate(-50%, -50%) scale(1);
+                                    width: 100%;
+                                    min-height: 100%;
+                                    filter: grayscale(1);
                                     transition: all 0.5s;
                                 }
                             }

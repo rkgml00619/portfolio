@@ -103,7 +103,7 @@
                         .title {
                             text-align: left;
                             a {
-                                width: 850px;
+                                width: 80%;
                                 color: #000;
                                 display: block;
                                 align-items: center;
@@ -191,7 +191,7 @@
                             .title {
                                 width: 60%;
                                 a {
-                                    width: 700px;
+                                    width: 100%;
                                 }
                             }
                         }
@@ -204,6 +204,9 @@
 
 @media screen and (max-width:768px) {
     #notice {
+        .contentsWrap .center .contTitleWrap {
+            margin-bottom: 40px;
+        }
         .contsDetail {
             .content1 {
                 .boardWrap {
@@ -260,11 +263,18 @@
                             .title {
                                 width: 100%;
                                 text-align: left;
+                                padding: 20px 10px;
                                 a {
-                                    display: inline-block;
                                     overflow: hidden;
                                     text-overflow: ellipsis;
-                                    white-space: nowrap;
+                                    white-space: normal;
+                                    display: flex;
+                                    align-items: center;
+                                    -webkit-line-clamp: 2;
+                                    -webkit-box-orient: vertical;
+                                    line-height: 1.3;
+                                    word-break: keep-all;
+                                    font-size: 16px;
                                     width: 80vw;
                                     span.new {
                                         display: inline-block;

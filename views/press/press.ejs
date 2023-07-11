@@ -1,4 +1,4 @@
-<%- include("../header", {jsFiles: [""]}) %>
+<%- include("../header", {jsFiles: []}) %>
 
     <div id="press" class="press">
         <div class="topSection">
@@ -14,11 +14,6 @@
             <div class="center">
                 <ul class="location">
                     <li><a href="#">Home</a></li>
-                    <li class="locaArrow"><span  class="material-symbols-outlined">
-                        navigate_next</span></li>
-                    <li>
-                        <a href="#">알림마당</a>
-                    </li>
                     <li class="locaArrow"><span  class="material-symbols-outlined">
                         navigate_next</span></li>
                     <li>
@@ -42,9 +37,9 @@
                                     <% if (data) { %>
                                         <% for( let i = 0; i < data.length; i++ ) { %>
                                             <div class="boradList">
-                                                <a href="/press/detail/<%- i %>">
+                                                <a href="/press/detail/<%- data[i].pressCount %>">
                                                     <div class="imgWrap">
-                                                        <img src="/upload/<%- data[i].thumbImg[i] %>">
+                                                        <img src="/upload/<%- data[i].thumbImg[0] %>">
                                                     </div>
                                                     <div class="infoWrap">
                                                         <h5 class="title"><%- data[i].title %></h5>

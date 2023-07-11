@@ -1,0 +1,85 @@
+<%- include("../header", {jsFiles: ["sub/register.js"]}) %>
+
+    <div id="notice_edit" class="notice">
+        <div class="topSection">
+            <div class="overlay"></div>
+            <div class="center">
+                <div class="topTitWrap">
+                    <h2 class="topTit">공지사항</h2>
+                    <p class="topSubTit">Korea Tourism Organization Notice</p>
+                </div>
+            </div>
+        </div>
+        <div class="contentsWrap">
+            <div class="center">
+                <ul class="location">
+                    <li><a href="#">Home</a></li>
+                    <li class="locaArrow"><span  class="material-symbols-outlined">
+                        navigate_next</span></li>
+                    <li>
+                        <a href="#">공지사항</a>
+                    </li>
+                </ul>
+                <div class="contTitleWrap">
+                    <h2 class="contsTitle">공지사항</h2>
+                    <p class="contSubTitle">한국관광공사 이용 시 공지사항을 참고해주세요.</p>
+                </div>
+
+                <div class="contsWrap">
+                    <div class="contsDetail">
+                        <div class="content1">
+                            <div class="boardConts">
+                                <form action="/noticeData" method="post" enctype="multipart/form-data">
+                                    <div class="formWrap">
+                                        <div class="department">
+                                            <label for="department">담당부서</label>
+                                            <select name="department" id="department">
+                                                <option value="국제관광본부">국제관광본부</option>
+                                                <option value="국민관광본부">국민관광본부</option>
+                                                <option value="관광산업본부">관광산업본부</option>
+                                                <option value="관광디지털본부">관광디지털본부</option>
+                                                <option value="경영혁신본부">경영혁신본부</option>
+                                            </select>
+                                        </div>
+                                        <div class="writer">
+                                            <label for="writer">작성자</label>
+                                            <% if (login) { %>
+                                                <input id="writer" name="writer" type="text" value="<%-login.name%>">
+                                            <% } else { %>
+                                                <input id="writer" name="writer" type="text" value="관리자">
+                                            <% } %>
+                                        </div>
+                                        <div class="writeDate">
+                                            <label for="writeDate">작성일</label>
+                                            <input id="writeDate" name="writeDate" type="date">
+                                        </div>
+                                        <div class="addFiles">
+                                            <label for="addFiles">첨부자료</label>
+                                            <input id="addFiles" name="addFiles" type="file" multiple>
+                                        </div>
+                                        <div class="title">
+                                            <label for="title">제목</label>
+                                            <input id="title" name="title" type="text" placeholder="제목을 입력하세요">
+                                        </div>
+                                        <div class="textArea">
+                                            <label for="textArea">내용</label>
+                                            <textarea name="textArea" id="textArea"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="boardBtns">
+                                        <div class="editBtns">
+                                            <button class="cancelBtn" type="reset">취소</button>
+                                            <button class="submitBtn" type="submit">등록</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include("../footer") %>  

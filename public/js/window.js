@@ -39,7 +39,7 @@ window.onscroll = function(){
 
     // 메인페이지 섹션2(추천행사) 오른쪽 리스트 노출
     for(let i = 0; i < festivalList.length; i++){
-        if(scTop >= sectionTop[1] + (i * 100 + i * 100)){
+        if(scTop >= sectionTop[1] + (i * 100 + i * 50)){
             festivalList[i].classList.add("on");
         }
         else{

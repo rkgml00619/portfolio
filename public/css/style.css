@@ -1132,9 +1132,10 @@ input, button, textarea {
 }
 #container .section2 .center .rightConts .contsWrap .conts:hover .imgWrap img {
   transform: translate(-50%, -50%) scale(1.2);
+  filter: blur(4px);
 }
 #container .section2 .center .rightConts .contsWrap .conts:hover .textWrap {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   opacity: 1;
 }
 #container .section2 .center .rightConts .contsWrap .conts:hover .textWrap h5 {
@@ -1142,6 +1143,11 @@ input, button, textarea {
 }
 #container .section2 .center .rightConts .contsWrap .conts:hover .textWrap p {
   opacity: 1;
+}
+#container .section2 .center .rightConts .contsWrap .conts .imgWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #container .section2 .center .rightConts .contsWrap .conts .imgWrap img {
   position: absolute;
@@ -1155,7 +1161,7 @@ input, button, textarea {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6));
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8));
   box-sizing: border-box;
   padding: 40px;
   opacity: 1;
@@ -1167,7 +1173,7 @@ input, button, textarea {
   line-height: 1.4;
   word-break: keep-all;
   color: #fff;
-  opacity: 0.6;
+  opacity: 0;
   transition: all 0.5s;
 }
 #container .section2 .center .rightConts .contsWrap .conts .textWrap p {
@@ -1175,8 +1181,14 @@ input, button, textarea {
   line-height: 1.4;
   font-weight: 300;
   color: #fff;
-  opacity: 0.6;
+  opacity: 0;
   transition: all 0.5s;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #container .section2 .center .rightConts .contsWrap .conts:nth-child(odd) {
   transform: translateY(-20px);
@@ -2245,6 +2257,10 @@ input, button, textarea {
 
 .press .topSection {
   background: url(../img/press_topBG.jpg) no-repeat center/cover;
+}
+
+.notice .topSection {
+  background: url(../img/notice_topBG.jpg) no-repeat center/cover;
 }
 
 .customer .topSection {
@@ -5269,6 +5285,7 @@ input, button, textarea {
 #festival .contsDetail .content1 .boardWrap .boardTop {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
@@ -5285,6 +5302,66 @@ input, button, textarea {
 #festival .contsDetail .content1 .boardWrap .boardTop .searchForm {
   display: flex;
   align-items: center;
+}
+#festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap {
+  position: relative;
+  margin-right: 10px;
+}
+#festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findBtn {
+  position: relative;
+}
+#festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findBtn .findSelBtn {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  width: 150px;
+  height: 50px;
+  padding: 20px;
+  font-size: 16px;
+  color: #000;
+  box-sizing: border-box;
+}
+#festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findBtn span.moreIcon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+#festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findSelect {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  top: 50px;
+  background: #fff;
+  border: 0;
+  box-sizing: border-box;
+  z-index: 20;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.5s;
+}
+#festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findSelect li {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  height: 50px;
+  font-size: 16px;
+  border-bottom: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findSelect li:last-child {
+  border-bottom: 0;
+}
+#festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findSelect.on {
+  border: 1px solid #ccc;
+  border-top: 0;
+  height: 100px;
+}
+#festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findSelect.on li {
+  border-bottom: 1px solid #ccc;
 }
 #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .festivalSearch {
   width: 350px;
@@ -5320,8 +5397,9 @@ input, button, textarea {
 }
 #festival .contsDetail .content1 .boardWrap .boardBot .listWrap {
   display: grid;
-  grid-template-columns: repeat(auto-fill, calc(33.333333% - 40px));
-  grid-gap: 40px;
+  grid-template-columns: repeat(auto-fill, calc(33.333333% - 30px));
+  grid-gap: 30px;
+  justify-content: space-between;
 }
 #festival .contsDetail .content1 .boardWrap .boardBot .listWrap .list {
   width: 100%;
@@ -5329,8 +5407,8 @@ input, button, textarea {
   box-sizing: border-box;
   border-radius: 15px;
   overflow: hidden;
-  margin-right: 40px;
-  margin-bottom: 40px;
+  margin-right: 30px;
+  margin-bottom: 30px;
   transition: all 0.5s;
 }
 #festival .contsDetail .content1 .boardWrap .boardBot .listWrap .list:nth-child(3n) {
@@ -5364,9 +5442,17 @@ input, button, textarea {
 }
 #festival .contsDetail .content1 .boardWrap .boardBot .listWrap .list a .contsWrap h5 {
   font-size: 2.2rem;
+  line-height: 1.3;
+  word-break: keep-all;
   margin-bottom: 20px;
   font-weight: 500;
   color: #000;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #festival .contsDetail .content1 .boardWrap .boardBot .listWrap .list a .contsWrap > div {
   display: flex;
@@ -5458,6 +5544,75 @@ input, button, textarea {
 }
 
 @media screen and (max-width: 1200px) {
+  #festival .contsDetail .content1 .boardWrap .boardTop .boardNum {
+    margin-bottom: 10px;
+  }
+  #festival .contsDetail .content1 .boardWrap .boardTop .searchForm {
+    margin-bottom: 10px;
+  }
+  #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap {
+    position: relative;
+    margin-right: 5px;
+  }
+  #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findBtn {
+    position: relative;
+  }
+  #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findBtn .findSelBtn {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    font-size: 16px;
+    color: #000;
+    box-sizing: border-box;
+  }
+  #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findBtn span.moreIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findSelect {
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 50px;
+    background: #fff;
+    border: 0;
+    box-sizing: border-box;
+    z-index: 20;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.5s;
+  }
+  #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findSelect li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+    font-size: 16px;
+    border-bottom: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findSelect li:last-child {
+    border-bottom: 0;
+  }
+  #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findSelect.on {
+    border: 1px solid #ccc;
+    border-top: 0;
+    height: 100px;
+  }
+  #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .selWrap .findSelect.on li {
+    border-bottom: 1px solid #ccc;
+  }
+  #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .festivalSearch {
+    width: 60%;
+  }
   #festival .contsDetail .content1 .boardWrap .boardBot {
     padding: 20px 0;
   }
@@ -5488,10 +5643,10 @@ input, button, textarea {
   #festival .contsDetail .content1 .boardWrap .boardTop .searchForm {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
   #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .festivalSearch {
-    width: 83%;
+    width: 55%;
     height: 50px;
     padding: 10px;
     margin-right: 0;
@@ -5503,7 +5658,7 @@ input, button, textarea {
     font-size: 1.6rem;
   }
   #festival .contsDetail .content1 .boardWrap .boardTop .searchForm .searchBtn {
-    width: 15%;
+    width: 50px;
     height: 50px;
   }
   #festival .contsDetail .content1 .boardWrap .boardBot {
@@ -5704,6 +5859,181 @@ input, button, textarea {
   color: #fff;
 }
 
+#festival_detail .contsDetail > div {
+  border-bottom: 1px solid #ccc;
+}
+#festival_detail .contsDetail > div:last-child {
+  border-bottom: 0;
+}
+#festival_detail .contsDetail > div .detailTitle {
+  margin-bottom: 20px;
+}
+#festival_detail .contsDetail > div .detailSubText {
+  font-size: 2.2rem;
+  margin-bottom: 80px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+#festival_detail .contsDetail .content1 .boardConts {
+  border-top: 2px solid #4A5677;
+  border-bottom: 2px solid #4A5677;
+  margin-bottom: 40px;
+}
+#festival_detail .contsDetail .content1 .boardConts .contsTop > div {
+  border-bottom: 1px solid #ccc;
+}
+#festival_detail .contsDetail .content1 .boardConts .contsTop .titleWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+#festival_detail .contsDetail .content1 .boardConts .contsTop .titleWrap .title {
+  font-size: 3rem;
+  letter-spacing: -0.5px;
+  word-break: keep-all;
+  font-weight: 500;
+}
+#festival_detail .contsDetail .content1 .boardConts .contsTop .titleWrap .uploadDate {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+#festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap {
+  display: flex;
+  padding: 20px 0;
+}
+#festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 30px;
+  border-right: 1px solid #ccc;
+}
+#festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl:last-child {
+  border-right: 0;
+}
+#festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dt, #festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dd {
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+#festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dt {
+  font-weight: 500;
+  margin-right: 20px;
+}
+#festival_detail .contsDetail .content1 .boardConts .contsBot {
+  padding: 60px 30px;
+}
+#festival_detail .contsDetail .content1 .boardConts .contsBot p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  font-weight: 300;
+  padding-top: 20px;
+  white-space: pre-line;
+}
+#festival_detail .contsDetail .content1 .boardBtns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#festival_detail .contsDetail .content1 .boardBtns a, #festival_detail .contsDetail .content1 .boardBtns button {
+  display: inline-block;
+  font-size: 1.6rem;
+  border: 1px solid #4A5677;
+  padding: 15px 40px;
+  color: #4A5677;
+  background: #fff;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+#festival_detail .contsDetail .content1 .boardBtns a:hover, #festival_detail .contsDetail .content1 .boardBtns button:hover {
+  background: #4A5677;
+  color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  #festival_detail .contsDetail .content1 .boardConts .contsTop .titleWrap {
+    padding: 20px 10px;
+  }
+  #festival_detail .contsDetail .content1 .boardConts .contsTop .titleWrap .title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+    font-weight: 500;
+  }
+  #festival_detail .contsDetail .content1 .boardConts .contsTop .titleWrap .uploadDate {
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+  #festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap {
+    width: 100%;
+    display: block;
+    flex-wrap: wrap;
+    padding: 20px 10px;
+  }
+  #festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    border-right: 0;
+  }
+  #festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl:first-child {
+    display: none;
+  }
+  #festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl:last-child {
+    border-right: 0;
+    margin-bottom: 0;
+  }
+  #festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dt, #festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dd {
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+  #festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dt {
+    max-width: 80px;
+    width: 20vw;
+    font-weight: 500;
+    margin-right: 20px;
+  }
+  #festival_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dd {
+    margin-top: 0;
+  }
+  #festival_detail .contsDetail .content1 .boardConts .contsBot {
+    padding: 40px 10px;
+  }
+  #festival_detail .contsDetail .content1 .boardConts .contsBot p {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    font-weight: 300;
+    padding-top: 20px;
+    white-space: pre-line;
+  }
+  #festival_detail .contsDetail .content1 .boardBtns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  #festival_detail .contsDetail .content1 .boardBtns a, #festival_detail .contsDetail .content1 .boardBtns button {
+    display: inline-block;
+    font-size: 1.6rem;
+    border: 1px solid #4A5677;
+    padding: 15px 40px;
+    color: #4A5677;
+    background: #fff;
+    margin-left: 10px;
+    transition: all 0.5s;
+  }
+  #festival_detail .contsDetail .content1 .boardBtns a:hover, #festival_detail .contsDetail .content1 .boardBtns button:hover {
+    background: #4A5677;
+    color: #fff;
+  }
+}
 #press .contsDetail > div {
   border-bottom: 1px solid #ccc;
 }
@@ -5745,36 +6075,6 @@ input, button, textarea {
   color: #faa61a;
   font-weight: 600;
 }
-#press .contsDetail .content1 .boardWrap .boardTop .searchForm {
-  display: flex;
-  align-items: center;
-}
-#press .contsDetail .content1 .boardWrap .boardTop .searchForm .festivalSearch {
-  width: 350px;
-  height: 50px;
-  box-sizing: border-box;
-  padding: 15px;
-  border: 1px solid #ccc;
-  margin-right: 5px;
-}
-#press .contsDetail .content1 .boardWrap .boardTop .searchForm .festivalSearch::-moz-placeholder {
-  font-size: 1.6rem;
-  line-height: 1;
-  color: #999;
-}
-#press .contsDetail .content1 .boardWrap .boardTop .searchForm .festivalSearch::placeholder {
-  font-size: 1.6rem;
-  line-height: 1;
-  color: #999;
-}
-#press .contsDetail .content1 .boardWrap .boardTop .searchForm .searchBtn {
-  width: 50px;
-  height: 50px;
-  box-sizing: border-box;
-  border: 0;
-  background: #4A5677;
-  color: #fff;
-}
 #press .contsDetail .content1 .boardWrap .boardBot {
   width: 100%;
   border-top: 2px solid #4A5677;
@@ -5789,7 +6089,8 @@ input, button, textarea {
   border-bottom: 0;
 }
 #press .contsDetail .content1 .boardWrap .boardBot .boradList:hover a .imgWrap img {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: scale(1.1);
+  filter: grayscale(0);
 }
 #press .contsDetail .content1 .boardWrap .boardBot .boradList:hover a .infoWrap .title {
   color: #4A5677;
@@ -5811,14 +6112,14 @@ input, button, textarea {
   border: 1px solid #ddd;
   overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #press .contsDetail .content1 .boardWrap .boardBot .boradList a .imgWrap img {
   width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  min-height: 100%;
+  filter: grayscale(1);
   transition: all 0.5s;
 }
 #press .contsDetail .content1 .boardWrap .boardBot .boradList a .infoWrap {
@@ -6075,6 +6376,9 @@ input, button, textarea {
 #press_detail .contsDetail .content1 .boardConts .contsBot {
   padding: 60px 30px;
 }
+#press_detail .contsDetail .content1 .boardConts .contsBot img {
+  max-width: 100%;
+}
 #press_detail .contsDetail .content1 .boardConts .contsBot p {
   font-size: 1.8rem;
   line-height: 1.8;
@@ -6089,18 +6393,100 @@ input, button, textarea {
   align-items: center;
   margin-bottom: 20px;
 }
-#press_detail .contsDetail .content1 .boardBtns a {
+#press_detail .contsDetail .content1 .boardBtns a, #press_detail .contsDetail .content1 .boardBtns button {
   display: inline-block;
   font-size: 1.6rem;
   border: 1px solid #4A5677;
   padding: 15px 40px;
   color: #4A5677;
+  background: #fff;
   margin-left: 10px;
   transition: all 0.5s;
 }
-#press_detail .contsDetail .content1 .boardBtns a:hover {
+#press_detail .contsDetail .content1 .boardBtns a:hover, #press_detail .contsDetail .content1 .boardBtns button:hover {
   background: #4A5677;
   color: #fff;
+}
+@media screen and (max-width: 1200px) {
+  #press_detail .contsDetail .content1 .boardConts .contsTop .titleWrap {
+    padding: 20px 10px;
+  }
+  #press_detail .contsDetail .content1 .boardConts .contsTop .titleWrap .title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+    font-weight: 500;
+  }
+  #press_detail .contsDetail .content1 .boardConts .contsTop .titleWrap .uploadDate {
+    display: none;
+  }
+  #press_detail .contsDetail .content1 .boardConts .contsTop .metaWrap {
+    width: 100%;
+    display: block;
+    flex-wrap: wrap;
+    padding: 20px 10px;
+  }
+  #press_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    border-right: 0;
+  }
+  #press_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl:first-child {
+    display: none;
+  }
+  #press_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl:last-child {
+    border-right: 0;
+    margin-bottom: 0;
+  }
+  #press_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dt, #press_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dd {
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+  #press_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dt {
+    max-width: 80px;
+    width: 20vw;
+    font-weight: 500;
+    margin-right: 20px;
+  }
+  #press_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dd {
+    margin-top: 0;
+  }
+  #press_detail .contsDetail .content1 .boardConts .contsBot {
+    padding: 40px 10px;
+  }
+  #press_detail .contsDetail .content1 .boardConts .contsBot p {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    font-weight: 300;
+    padding-top: 20px;
+    white-space: pre-line;
+  }
+  #press_detail .contsDetail .content1 .boardBtns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  #press_detail .contsDetail .content1 .boardBtns a, #press_detail .contsDetail .content1 .boardBtns button {
+    display: inline-block;
+    font-size: 1.6rem;
+    border: 1px solid #4A5677;
+    padding: 15px 40px;
+    color: #4A5677;
+    background: #fff;
+    margin-left: 10px;
+    transition: all 0.5s;
+  }
+  #press_detail .contsDetail .content1 .boardBtns a:hover, #press_detail .contsDetail .content1 .boardBtns button:hover {
+    background: #4A5677;
+    color: #fff;
+  }
 }
 #press_edit .contsDetail > div {
   border-bottom: 1px solid #ccc;
@@ -6298,7 +6684,7 @@ input, button, textarea {
   text-align: left;
 }
 #notice .contsDetail .content1 .boardWrap .boardBot .list .title a {
-  width: 850px;
+  width: 80%;
   color: #000;
   display: block;
   align-items: center;
@@ -6372,10 +6758,13 @@ input, button, textarea {
     width: 60%;
   }
   #notice .contsDetail .content1 .boardWrap .boardBot .list .title a {
-    width: 700px;
+    width: 100%;
   }
 }
 @media screen and (max-width: 768px) {
+  #notice .contentsWrap .center .contTitleWrap {
+    margin-bottom: 40px;
+  }
   #notice .contsDetail .content1 .boardWrap {
     display: block;
     width: 100%;
@@ -6433,12 +6822,19 @@ input, button, textarea {
   #notice .contsDetail .content1 .boardWrap .boardBot .list .title {
     width: 100%;
     text-align: left;
+    padding: 20px 10px;
   }
   #notice .contsDetail .content1 .boardWrap .boardBot .list .title a {
-    display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
+    display: flex;
+    align-items: center;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.3;
+    word-break: keep-all;
+    font-size: 16px;
     width: 80vw;
   }
   #notice .contsDetail .content1 .boardWrap .boardBot .list .title a span.new {
@@ -6486,6 +6882,328 @@ input, button, textarea {
   }
   #notice .contsDetail .content1 .pagenationM a.number span {
     color: #4A5677;
+  }
+}
+#notice_edit .contsDetail > div {
+  border-bottom: 1px solid #ccc;
+}
+#notice_edit .contsDetail > div:last-child {
+  border-bottom: 0;
+}
+#notice_edit .contsDetail > div .detailTitle {
+  margin-bottom: 20px;
+}
+#notice_edit .contsDetail > div .detailSubText {
+  font-size: 2.2rem;
+  margin-bottom: 80px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+#notice_edit .contsDetail .content1 .boardConts form .formWrap {
+  border-top: 2px solid #4A5677;
+  border-bottom: 2px solid #4A5677;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+#notice_edit .contsDetail .content1 .boardConts form .formWrap > div {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+#notice_edit .contsDetail .content1 .boardConts form .formWrap > div label {
+  width: 10%;
+  height: 50px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  border-right: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+#notice_edit .contsDetail .content1 .boardConts form .formWrap > div input, #notice_edit .contsDetail .content1 .boardConts form .formWrap > div select, #notice_edit .contsDetail .content1 .boardConts form .formWrap > div textarea {
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+#notice_edit .contsDetail .content1 .boardConts form .formWrap > div input::-moz-placeholder, #notice_edit .contsDetail .content1 .boardConts form .formWrap > div select::-moz-placeholder, #notice_edit .contsDetail .content1 .boardConts form .formWrap > div textarea::-moz-placeholder {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+#notice_edit .contsDetail .content1 .boardConts form .formWrap > div input::placeholder, #notice_edit .contsDetail .content1 .boardConts form .formWrap > div select::placeholder, #notice_edit .contsDetail .content1 .boardConts form .formWrap > div textarea::placeholder {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+#notice_edit .contsDetail .content1 .boardConts form .formWrap > div select {
+  width: 200px;
+}
+#notice_edit .contsDetail .content1 .boardConts form .formWrap > div input#title, #notice_edit .contsDetail .content1 .boardConts form .formWrap > div #textArea {
+  width: 90%;
+}
+#notice_edit .contsDetail .content1 .boardConts form .formWrap > div input#writeDate {
+  width: 20%;
+}
+#notice_edit .contsDetail .content1 .boardConts form .formWrap > div #textArea {
+  height: 400px;
+}
+#notice_edit .contsDetail .content1 .boardBtns {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#notice_edit .contsDetail .content1 .boardBtns button {
+  display: inline-block;
+  background: #fff;
+  font-size: 1.6rem;
+  border: 1px solid #4A5677;
+  padding: 15px 40px;
+  color: #4A5677;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#notice_edit .contsDetail .content1 .boardBtns button:hover {
+  background: #4A5677;
+  color: #fff;
+}
+
+#notice_detail .contsDetail > div {
+  border-bottom: 1px solid #ccc;
+}
+#notice_detail .contsDetail > div:last-child {
+  border-bottom: 0;
+}
+#notice_detail .contsDetail > div .detailTitle {
+  margin-bottom: 20px;
+}
+#notice_detail .contsDetail > div .detailSubText {
+  font-size: 2.2rem;
+  margin-bottom: 80px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+#notice_detail .contsDetail .content1 .boardConts {
+  border-top: 2px solid #4A5677;
+  border-bottom: 2px solid #4A5677;
+  margin-bottom: 40px;
+}
+#notice_detail .contsDetail .content1 .boardConts .contsTop > div {
+  border-bottom: 1px solid #ccc;
+}
+#notice_detail .contsDetail .content1 .boardConts .contsTop .titleWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+#notice_detail .contsDetail .content1 .boardConts .contsTop .titleWrap .title {
+  font-size: 3rem;
+  letter-spacing: -0.5px;
+  word-break: keep-all;
+  font-weight: 500;
+}
+#notice_detail .contsDetail .content1 .boardConts .contsTop .titleWrap .uploadDate {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+#notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap {
+  display: flex;
+  padding: 20px 0;
+}
+#notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl {
+  display: flex;
+  padding: 0 30px;
+  border-right: 1px solid #ccc;
+}
+#notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl:last-child {
+  border-right: 0;
+}
+#notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dt, #notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dd {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+#notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dt {
+  font-weight: 500;
+  margin-right: 20px;
+}
+#notice_detail .contsDetail .content1 .boardConts .contsBot {
+  padding: 20px 30px 60px;
+}
+#notice_detail .contsDetail .content1 .boardConts .contsBot img {
+  max-width: 100%;
+}
+#notice_detail .contsDetail .content1 .boardConts .contsBot p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  font-weight: 300;
+  padding-top: 20px;
+  white-space: pre-line;
+}
+#notice_detail .contsDetail .content1 .boardConts .addFiles {
+  font-size: 16px;
+}
+#notice_detail .contsDetail .content1 .boardConts .addFiles .addFileList {
+  background: #f9f9f9;
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ccc;
+}
+#notice_detail .contsDetail .content1 .boardConts .addFiles .addFileList h5 {
+  margin-right: 20px;
+  font-weight: 500;
+}
+#notice_detail .contsDetail .content1 .boardConts .addFiles .addFileList p {
+  word-break: keep-all;
+  line-height: 1.3;
+  margin-right: 20px;
+  color: #666;
+}
+#notice_detail .contsDetail .content1 .boardConts .addFiles .addFileList a {
+  background: #4A5677;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+#notice_detail .contsDetail .content1 .boardBtns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#notice_detail .contsDetail .content1 .boardBtns a, #notice_detail .contsDetail .content1 .boardBtns button {
+  display: inline-block;
+  font-size: 1.6rem;
+  border: 1px solid #4A5677;
+  padding: 15px 40px;
+  color: #4A5677;
+  background: #fff;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+#notice_detail .contsDetail .content1 .boardBtns a:hover, #notice_detail .contsDetail .content1 .boardBtns button:hover {
+  background: #4A5677;
+  color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  #notice_detail .contsDetail .content1 .boardConts .contsTop .titleWrap {
+    padding: 20px 10px;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .contsTop .titleWrap .title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+    font-weight: 500;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .contsTop .titleWrap .uploadDate {
+    display: none;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap {
+    width: 100%;
+    display: block;
+    flex-wrap: wrap;
+    padding: 20px 10px;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    border-right: 0;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl:first-child {
+    display: none;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl:last-child {
+    border-right: 0;
+    margin-bottom: 0;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dt, #notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dd {
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dt {
+    max-width: 80px;
+    width: 20vw;
+    font-weight: 500;
+    margin-right: 20px;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .contsTop .metaWrap dl dd {
+    margin-top: 0;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .contsBot {
+    padding: 0 10px 40px;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .contsBot p {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    font-weight: 300;
+    padding-top: 20px;
+    white-space: pre-line;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .addFiles {
+    font-size: 16px;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .addFiles .addFileList {
+    background: #f9f9f9;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .addFiles .addFileList h5 {
+    margin-right: 0;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .addFiles .addFileList p {
+    word-break: keep-all;
+    line-height: 1.3;
+    margin-right: 0;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  #notice_detail .contsDetail .content1 .boardConts .addFiles .addFileList a {
+    background: #4A5677;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 20px;
+    margin-right: 10px;
+  }
+  #notice_detail .contsDetail .content1 .boardBtns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  #notice_detail .contsDetail .content1 .boardBtns a, #notice_detail .contsDetail .content1 .boardBtns button {
+    display: inline-block;
+    font-size: 1.6rem;
+    border: 1px solid #4A5677;
+    padding: 15px 40px;
+    color: #4A5677;
+    background: #fff;
+    margin-left: 10px;
+    transition: all 0.5s;
+  }
+  #notice_detail .contsDetail .content1 .boardBtns a:hover, #notice_detail .contsDetail .content1 .boardBtns button:hover {
+    background: #4A5677;
+    color: #fff;
   }
 }
 #smart_inquiry .contsDetail > div {
