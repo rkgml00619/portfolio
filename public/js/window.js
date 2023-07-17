@@ -18,10 +18,10 @@ window.onscroll = function(){
     // header 색상 제어
     if(scTop <= 0){
         if(mainLink === "/"){
-            if(!mobile.matches || !tablet.matches){
+            if(pc.matches){
                 headerWrap.classList.add("on");
             }
-            else {
+            else if(mobile.matches || tablet.matches){
                 headerWrap.classList.remove("on");
             }
         }
@@ -39,7 +39,8 @@ window.onscroll = function(){
 
     // 메인페이지 섹션2(추천행사) 오른쪽 리스트 노출
     for(let i = 0; i < festivalList.length; i++){
-        if(scTop >= sectionTop[1] + (i * 100 + i * 50)){
+        // if(scTop >= sectionTop[1] + (i * 100 + i * 50))
+        if(scTop >= sectionTop[1] + (i * 100 + i * 10)){
             festivalList[i].classList.add("on");
         }
         else{

@@ -112,6 +112,12 @@
                                 border-radius: 50px 0 50px 0;
                                 box-shadow: 0 10px 10px rgba(0,0,0,0.4);
                             }
+                            .imgWrap {
+                                img {
+                                    height: auto;
+                                    width: 100%;
+                                }
+                            }
                             .textWrap {
                                 padding: 40px;
                                 h5 {

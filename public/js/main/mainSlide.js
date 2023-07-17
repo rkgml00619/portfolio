@@ -21,6 +21,11 @@ const mainMobileText = ["국제관광지원", "국민관광지원", "관광산�
 
 /************************************************************************************/
 
+window.addEventListener("load", function(){
+    if(tablet.matches || mobile.matches){
+        clearInterval(autoMainSlide);
+    }
+});
 
 // 자동 슬라이드 재생
 let autoMainSlide = setInterval(function(){
@@ -35,7 +40,7 @@ let autoMainSlide = setInterval(function(){
     
     slideMenuControl();
     slideTextControl();
-}, 3000);
+}, 4000);
 
 // 자동 슬라이드 멈춤, 재실행
 autoSlideRepaly(controlWrap);
@@ -50,6 +55,8 @@ for(let i = 0; i < mainSlideContols.length; i++){
         slideTextControl();
     }
 }
+
+
 
 // 모바일 하단 좌측 메뉴 클릭 시
 mainContolsM_left.onclick = function(){
@@ -78,7 +85,6 @@ mainContolsM_right.onclick = function(){
 
 // 모바일 마우스 호버 시 
 autoSlideRepaly(mainContolsM_wrap);
-
 
 
 /* 리팩토링 ********************************************************************************************/
@@ -130,7 +136,7 @@ function autoSlideRepaly(item){
             mainSlideImg.style.marginLeft = (slideNum * -100) + "%";  
             slideMenuControl();
             slideTextControl();
-        }, 3000);
+        }, 4000);
     }
 }
 

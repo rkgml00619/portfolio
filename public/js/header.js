@@ -21,9 +21,30 @@ let mobileSubMenuList;
 
 /******************************************************************************************************************************************/
 
-if(mainLink !== "/"){
-    headerWrap.classList.remove("on");
-}
+window.addEventListener("load", function(){
+    if(mainLink !== "/"){
+        headerWrap.classList.remove("on");
+    }
+    else if(pc.matches){
+        headerWrap.classList.add("on");
+    }
+    else {
+        headerWrap.classList.remove("on");
+    }
+});
+
+window.addEventListener("resize", function(){
+    if(mainLink !== "/"){
+        headerWrap.classList.remove("on");
+    }
+    else if(pc.matches){
+        headerWrap.classList.add("on");
+    }
+    else {
+        headerWrap.classList.remove("on");
+    }
+});
+
 
 // header에 마우스 올렸을 때 클래스 제어
 headerWrap.onmouseenter = function(){
@@ -49,11 +70,15 @@ if(scTop == 0 && mobile.matches || tablet.matches){
 }
 
 // 모바일 햄버거 메뉴 클릭 시
-hamMenu.onclick = function(){
+hamMenu.onclick = function(e){
+    e.preventDefault();
+
     mobileMenuWrap.classList.add("on");
 }
 // 모바일 클로즈 메뉴 클릭 시
-CloseBtns.onclick = function(){
+CloseBtns.onclick = function(e){
+    e.preventDefault();
+
     mobileMenuWrap.classList.remove("on");
 }
 // 모바일 메뉴 클릭 시 서브메뉴 나오도록 제어
