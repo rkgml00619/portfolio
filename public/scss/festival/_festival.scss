@@ -130,6 +130,7 @@
                     padding: 40px 0;
                     border-top: 1px solid #ccc;
                     .listWrap {
+                        width: 100%;
                         display: grid;
                         grid-template-columns: repeat(auto-fill, calc(33.333333% - 30px));
                         grid-gap: 30px;
@@ -227,6 +228,19 @@
                                     }
                                 }
 
+                            }
+                        }
+                    }
+                    .listWrap.not {
+                        display: block;
+                        .notResult {
+                            width: 100%;
+                            text-align: center;
+                            p {
+                                font-size: 16px;
+                                line-height: 1.4;
+                                word-break: keep-all;
+                                padding: 60px;
                             }
                         }
                     }
@@ -513,28 +527,6 @@
                             &:hover {
                                 background: #4A5677;
                             }
-                        }
-                    }
-                }
-    
-                .pagenation {
-                    display: none;
-                }
-                .pagenationM {
-                    display: flex;
-                    align-items: center;
-                    a {
-                        color: #000;
-                        span.pageArrow {
-                            font-size: 3rem;
-                            font-variation-settings: "wght" 300;
-                        }
-                    }
-                    a.number {
-                        font-size: 2rem;
-                        margin: 0 20px;
-                        span {
-                            color: #4A5677;
                         }
                     }
                 }

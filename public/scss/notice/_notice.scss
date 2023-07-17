@@ -307,28 +307,6 @@
                         }
                     }
                 }
-    
-                .pagenation {
-                    display: none;
-                }
-                .pagenationM {
-                    display: flex;
-                    align-items: center;
-                    a {
-                        color: #000;
-                        span.pageArrow {
-                            font-size: 3rem;
-                            font-variation-settings: "wght" 300;
-                        }
-                    }
-                    a.number {
-                        font-size: 2rem;
-                        margin: 0 20px;
-                        span {
-                            color: #4A5677;
-                        }
-                    }
-                }
             }
         }
     }

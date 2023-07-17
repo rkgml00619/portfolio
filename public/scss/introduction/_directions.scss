@@ -2,7 +2,12 @@
     .contsDetail {
         .content1 {
             > .conts {
+                width: 100%;
                 .map {
+                    iframe {                        
+                        width: 100%;
+                        height: 500px;
+                    }
                 }
             }
         }

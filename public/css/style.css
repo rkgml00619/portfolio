@@ -3508,6 +3508,14 @@ input, button, textarea {
     height: 200px;
   }
 }
+#ceoGreet .contsDetail .content1 > .conts {
+  width: 100%;
+}
+#ceoGreet .contsDetail .content1 > .conts .map iframe {
+  width: 100%;
+  height: 500px;
+}
+
 #business01 .contsDetail > div {
   border-bottom: 1px solid #ccc;
 }
@@ -5404,6 +5412,7 @@ input, button, textarea {
   border-top: 1px solid #ccc;
 }
 #festival .contsDetail .content1 .boardWrap .boardBot .listWrap {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, calc(33.333333% - 30px));
   grid-gap: 30px;
@@ -5498,6 +5507,19 @@ input, button, textarea {
   font-size: 3rem;
   font-variation-settings: "wght" 200;
   transition: all 0.5s;
+}
+#festival .contsDetail .content1 .boardWrap .boardBot .listWrap.not {
+  display: block;
+}
+#festival .contsDetail .content1 .boardWrap .boardBot .listWrap.not .notResult {
+  width: 100%;
+  text-align: center;
+}
+#festival .contsDetail .content1 .boardWrap .boardBot .listWrap.not .notResult p {
+  font-size: 16px;
+  line-height: 1.4;
+  word-break: keep-all;
+  padding: 60px;
 }
 #festival .contsDetail .content1 .boardWrap .boardBtns {
   width: 100%;
@@ -5756,27 +5778,6 @@ input, button, textarea {
   }
   #festival .contsDetail .content1 .boardWrap .boardBtns .newPost:hover {
     background: #4A5677;
-  }
-  #festival .contsDetail .content1 .pagenation {
-    display: none;
-  }
-  #festival .contsDetail .content1 .pagenationM {
-    display: flex;
-    align-items: center;
-  }
-  #festival .contsDetail .content1 .pagenationM a {
-    color: #000;
-  }
-  #festival .contsDetail .content1 .pagenationM a span.pageArrow {
-    font-size: 3rem;
-    font-variation-settings: "wght" 300;
-  }
-  #festival .contsDetail .content1 .pagenationM a.number {
-    font-size: 2rem;
-    margin: 0 20px;
-  }
-  #festival .contsDetail .content1 .pagenationM a.number span {
-    color: #4A5677;
   }
 }
 #festival_edit .contsDetail > div {
@@ -6869,27 +6870,6 @@ input, button, textarea {
   }
   #notice .contsDetail .content1 .boardWrap .boardBtns .newPost:hover {
     background: #4A5677;
-  }
-  #notice .contsDetail .content1 .pagenation {
-    display: none;
-  }
-  #notice .contsDetail .content1 .pagenationM {
-    display: flex;
-    align-items: center;
-  }
-  #notice .contsDetail .content1 .pagenationM a {
-    color: #000;
-  }
-  #notice .contsDetail .content1 .pagenationM a span.pageArrow {
-    font-size: 3rem;
-    font-variation-settings: "wght" 300;
-  }
-  #notice .contsDetail .content1 .pagenationM a.number {
-    font-size: 2rem;
-    margin: 0 20px;
-  }
-  #notice .contsDetail .content1 .pagenationM a.number span {
-    color: #4A5677;
   }
 }
 #notice_edit .contsDetail > div {

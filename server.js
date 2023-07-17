@@ -243,7 +243,7 @@ app.get("/festivalSearch", (req, res)=>{
         if(blockEnd > totalPaging){
             blockEnd = totalPaging;
         }
-
+        
         let totalBlock = Math.ceil(totalPaging / blockCount);
         let startFrom = (pageNumber - 1) * perpage;
 
